@@ -20,6 +20,7 @@
 		"@astrojs/preact": "^4.1.0",
 		"@tailwindcss/vite": "^4.1.11",
 		"astro": "^5.12.9",
+		"lucide-preact": "^0.539.0",
 		"preact": "^10.27.0",
 		"tailwindcss": "^4.1.11"
 	},
