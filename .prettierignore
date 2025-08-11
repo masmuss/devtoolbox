@@ -1,0 +1,16 @@
+*.min.js
+node_modules
+dist
+
+**/.cache
+
+bun.lock
+
+package.json
+
+.astro/*
+.vscode
+.idea
+.gitignore
+.prettierignore
+.husky/**
