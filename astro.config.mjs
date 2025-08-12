@@ -9,7 +9,20 @@ import { defineConfig } from "astro/config";
 export default defineConfig({
 	vite: {
 		plugins: [tailwindcss()],
+		build: {
+			rollupOptions: {
+				output: {
+					manualChunks: undefined,
+				},
+			},
+		},
 	},
-
 	integrations: [preact()],
+	output: "static",
+	build: {
+		inlineStylesheets: "auto",
+		format: "file",
+	},
+	compressHTML: true,
+	scopedStyleStrategy: "where",
 });
