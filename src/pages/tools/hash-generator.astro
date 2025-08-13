@@ -1,0 +1,61 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import HashGeneratorComponent from "@/components/tools/hash-generator.tsx";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import PageHeader from "@/components/layouts/PageHeader.astro";
+---
+
+<BaseLayout
+	title="Hash Generator"
+	description="Generate hashes using various algorithms like MD5, SHA-1, SHA-256, and SHA-512. No registration required - start generating hashes instantly."
+>
+	<main class="mx-auto max-w-5xl px-6 py-12 lg:px-8">
+		<PageHeader
+			title="Hash Generator"
+			description="Generate cryptographic hashes from your text using various algorithms like MD5, SHA-1, SHA-256, and more."
+		/>
+
+		<HashGeneratorComponent client:load />
+
+		<Card className="border-gray-200 dark:border-gray-800">
+			<CardHeader>
+				<CardTitle className="text-black dark:text-white">Hash Algorithm Information</CardTitle>
+			</CardHeader>
+			<CardContent>
+				<div class="grid gap-4 md:grid-cols-2">
+					<div>
+						<h3 class="mb-2 font-semibold text-black dark:text-white">Secure Algorithms</h3>
+						<ul class="space-y-1 text-sm text-gray-600 dark:text-gray-400">
+							<li>
+								• <strong>SHA-256:</strong> Most commonly used, very secure
+							</li>
+							<li>
+								• <strong>SHA-384:</strong> Higher security, larger output
+							</li>
+							<li>
+								• <strong>SHA-512:</strong> Highest security, largest output
+							</li>
+						</ul>
+					</div>
+					<div>
+						<h3 class="mb-2 font-semibold text-black dark:text-white">Legacy Algorithms</h3>
+						<ul class="space-y-1 text-sm text-gray-600 dark:text-gray-400">
+							<li>
+								• <strong>MD5:</strong> Fast but not secure for passwords
+							</li>
+							<li>
+								• <strong>SHA-1:</strong> Deprecated for security applications
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="mt-4 rounded-lg bg-gray-50 p-4 dark:bg-gray-900">
+					<p class="text-sm text-gray-600 dark:text-gray-400">
+						<strong>Note:</strong> For password hashing, use specialized algorithms like bcrypt, scrypt,
+						or Argon2 instead of these general-purpose hash functions.
+					</p>
+				</div>
+			</CardContent>
+		</Card>
+	</main>
+</BaseLayout>
