@@ -1,0 +1,24 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { allTools } from "@/lib/data/tools";
+import ToolsGrid from "@/components/sections/tools/tools-grid";
+---
+
+<BaseLayout
+	title="All Developer Tools"
+	description="Browse our complete collection of free developer tools. No registration required - start using any tool instantly."
+>
+	<section class="container mx-auto px-4 py-12">
+		<div class="mx-auto max-w-4xl text-center">
+			<h1 class="mb-4 text-4xl font-bold text-neutral-900 md:text-5xl dark:text-neutral-100">
+				All Developer Tools
+			</h1>
+			<p class="mx-auto mb-8 max-w-2xl text-xl text-neutral-600 dark:text-neutral-300">
+				Browse our complete collection of {allTools.length}+ free developer tools. No registration
+				required - start using any tool instantly.
+			</p>
+		</div>
+	</section>
+
+	<ToolsGrid />
+</BaseLayout>
