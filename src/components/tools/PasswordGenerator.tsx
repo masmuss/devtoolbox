@@ -1,195 +1,196 @@
-import { Check, Copy, RefreshCw } from "lucide-preact";
-import type { JSX } from "preact";
-import { useState } from "preact/hooks";
+import { Copy, RefreshCw } from "lucide-react";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Slider } from "@/components/ui/slider";
 
-export default function PasswordGenerator() {
-	type OptionKey = "uppercase" | "lowercase" | "numbers" | "symbols";
-	type Options = Record<OptionKey, boolean>;
-	type Chars = Record<OptionKey, string>;
-
-	const [password, setPassword] = useState<string>("");
-	const [length, setLength] = useState<number>(16);
-	const [options, setOptions] = useState<Options>({
-		uppercase: true,
-		lowercase: true,
-		numbers: true,
-		symbols: true,
+export default function PasswordGeneratorPage() {
+	const [options, setOptions] = useState({
+		includeUppercase: true,
+		includeLowercase: true,
+		includeNumbers: true,
+		includeSymbols: true,
+		excludeSimilar: false,
 	});
+	const [password, setPassword] = useState<string>("");
+	const [length, setLength] = useState<number[]>([12]);
 	const [copied, setCopied] = useState<boolean>(false);
 
+	const handleOptionChange = (key: keyof typeof options) => (checked: boolean) => {
+		setOptions((prev) => ({ ...prev, [key]: checked }));
+	};
+
 	const generatePassword = () => {
-		const chars: Chars = {
-			uppercase: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-			lowercase: "abcdefghijklmnopqrstuvwxyz",
-			numbers: "0123456789",
-			symbols: "!@#$%^&*()_+-=[]{}|;:,.<>?",
-		};
-
-		let availableChars = "";
-		(Object.keys(options) as OptionKey[]).forEach((key: OptionKey): void => {
-			if (options[key]) {
-				availableChars += chars[key];
-			}
-		});
-
-		if (!availableChars) {
-			setPassword("Please select at least one option");
+		let charset = "";
+		if (options.includeUppercase) charset += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+		if (options.includeLowercase) charset += "abcdefghijklmnopqrstuvwxyz";
+		if (options.includeNumbers) charset += "0123456789";
+		if (options.includeSymbols) charset += "!@#$%^&*()_+-=[]{}|;:,.<>?";
+		if (options.excludeSimilar) {
+			charset = charset.replace(/[il1Lo0O]/g, "");
+		}
+		if (!charset) {
+			setPassword("Please select at least one character type");
 			return;
 		}
-
 		let result = "";
-		for (let i = 0; i < length; i++) {
-			result += availableChars.charAt(Math.floor(Math.random() * availableChars.length));
+		for (let i = 0; i < length[0]; i++) {
+			result += charset.charAt(Math.floor(Math.random() * charset.length));
 		}
-
 		setPassword(result);
+		setCopied(false);
 	};
 
 	const copyToClipboard = async () => {
-		try {
+		if (password && password !== "Please select at least one character type") {
 			await navigator.clipboard.writeText(password);
 			setCopied(true);
 			setTimeout(() => setCopied(false), 2000);
-		} catch (err) {
-			console.error("Failed to copy: ", err);
 		}
 	};
 
-	const handleOptionChange = (option: OptionKey) => {
-		setOptions((prev) => ({
-			...prev,
-			[option]: !prev[option],
-		}));
-	};
-
 	return (
-		<div className="mx-auto max-w-2xl rounded-lg bg-white p-6 shadow-sm">
-			<div className="space-y-6">
-				<div>
-					<label htmlFor="password-length" className="mb-2 block text-sm font-medium text-gray-700">
-						Password Length: {length}
-					</label>
-					<input
-						id="password-length"
-						type="range"
-						min="4"
-						max="50"
-						value={length}
-						onChange={(e: JSX.TargetedEvent<HTMLInputElement, Event>) =>
-							setLength(Number(e.currentTarget.value))
-						}
-						className="h-2 w-full cursor-pointer appearance-none rounded-lg bg-gray-200"
-					/>
-					<div className="mt-1 flex justify-between text-xs text-gray-500">
-						<span>4</span>
-						<span>50</span>
-					</div>
-				</div>
-
-				<div>
-					<span className="mb-3 block text-sm font-medium text-gray-700">Character Types</span>
-					<div className="grid grid-cols-2 gap-3">
-						{Object.entries(options).map(([key, value]) => (
-							<label key={key} className="flex items-center">
-								<input
-									type="checkbox"
-									checked={value}
-									onChange={() => handleOptionChange(key as OptionKey)}
-									className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
-								/>
-								<span className="ml-2 text-sm text-gray-700 capitalize">
-									{key === "uppercase"
-										? "Uppercase (A-Z)"
-										: key === "lowercase"
-											? "Lowercase (a-z)"
-											: key === "numbers"
-												? "Numbers (0-9)"
-												: "Symbols (!@#$...)"}
-								</span>
-							</label>
-						))}
-					</div>
-				</div>
-
-				<button
-					type={"button"}
-					onClick={generatePassword}
-					className="flex w-full items-center justify-center space-x-2 rounded-lg bg-blue-600 px-4 py-2 text-white transition-colors hover:bg-blue-700"
-				>
-					<RefreshCw className="h-4 w-4" />
-					<span>Generate Password</span>
-				</button>
-
-				{password && (
-					<div>
-						<label
-							htmlFor="generated-password"
-							className="mb-2 block text-sm font-medium text-gray-700"
-						>
-							Generated Password
-						</label>
-						<div className="relative">
-							<input
-								id="generated-password"
-								type="text"
-								value={password}
-								readOnly
-								className="w-full rounded-lg border border-gray-300 bg-gray-50 p-3 pr-10 font-mono text-sm"
-							/>
-							<button
-								type={"button"}
+		<div className="grid gap-8 md:grid-cols-2">
+			<Card className="border-neutral-200 dark:border-neutral-800">
+				<CardHeader>
+					<CardTitle className="text-black dark:text-white">Generated Password</CardTitle>
+					<CardDescription className="text-neutral-600 dark:text-neutral-400">
+						Your secure password will appear here
+					</CardDescription>
+				</CardHeader>
+				<CardContent className="space-y-4">
+					<div className="relative">
+						<Input
+							value={password}
+							readOnly
+							placeholder="Click 'Generate Password' to create a password"
+							className="border-neutral-200 bg-neutral-50 pr-20 font-mono text-sm dark:border-neutral-800 dark:bg-neutral-900"
+						/>
+						<div className="absolute top-1/2 right-2 flex -translate-y-1/2 space-x-1">
+							<Button
+								size="sm"
+								variant="ghost"
 								onClick={copyToClipboard}
-								className="absolute top-1/2 right-2 -translate-y-1/2 transform p-1 text-gray-500 hover:text-gray-700"
-								title="Copy to clipboard"
+								disabled={!password || password === "Please select at least one character type"}
+								className="h-8 w-8 p-0 hover:bg-neutral-100 dark:hover:bg-neutral-800"
 							>
-								{copied ? (
-									<Check className="h-4 w-4 text-green-600" />
-								) : (
-									<Copy className="h-4 w-4" />
-								)}
-							</button>
+								<Copy className="h-4 w-4" />
+							</Button>
+							<Button
+								size="sm"
+								variant="ghost"
+								onClick={generatePassword}
+								className="h-8 w-8 p-0 hover:bg-neutral-100 dark:hover:bg-neutral-800"
+							>
+								<RefreshCw className="h-4 w-4" />
+							</Button>
 						</div>
-						{copied && <p className="mt-1 text-sm text-green-600">Copied to clipboard!</p>}
 					</div>
-				)}
-
-				{password && password !== "Please select at least one option" && (
-					<div>
-						<span className="mb-2 block text-sm font-medium text-gray-700">Password Strength</span>
-						<div className="flex space-x-1">
-							{[1, 2, 3, 4].map((level) => {
-								const strength = Math.min(
-									4,
-									Math.floor(length / 8) + Object.values(options).filter(Boolean).length - 1,
-								);
-								return (
-									<div
-										key={level}
-										className={`h-2 flex-1 rounded ${
-											level <= strength
-												? level <= 2
-													? "bg-red-400"
-													: level <= 3
-														? "bg-yellow-400"
-														: "bg-green-400"
-												: "bg-gray-200"
-										}`}
-									/>
-								);
-							})}
-						</div>
-						<p className="mt-1 text-xs text-gray-500">
-							{length < 8
-								? "Weak"
-								: length < 12
-									? "Medium"
-									: length < 16
-										? "Strong"
-										: "Very Strong"}
+					{copied && (
+						<p className="text-sm text-green-600 dark:text-green-400">
+							Password copied to clipboard!
 						</p>
+					)}
+					<Button
+						onClick={generatePassword}
+						className="w-full bg-black text-white hover:bg-neutral-800 dark:bg-white dark:text-black dark:hover:bg-neutral-200"
+					>
+						Generate Password
+					</Button>
+				</CardContent>
+			</Card>
+
+			{/* Options */}
+			<Card className="border-neutral-200 dark:border-neutral-800">
+				<CardHeader>
+					<CardTitle className="text-black dark:text-white">Options</CardTitle>
+					<CardDescription className="text-neutral-600 dark:text-neutral-400">
+						Customize your password requirements
+					</CardDescription>
+				</CardHeader>
+				<CardContent className="space-y-6">
+					{/* Length */}
+					<div className="space-y-3">
+						<div className="flex items-center justify-between">
+							<Label className="text-black dark:text-white">Length</Label>
+							<span className="text-sm text-neutral-600 dark:text-neutral-400">
+								{length[0]} characters
+							</span>
+						</div>
+						<Slider
+							value={length}
+							onValueChange={setLength}
+							max={128}
+							min={4}
+							step={1}
+							className="w-full"
+						/>
 					</div>
-				)}
-			</div>
+
+					{/* Character Types */}
+					<div className="space-y-4">
+						<Label className="text-black dark:text-white">Include Characters</Label>
+
+						<div className="flex items-center space-x-2">
+							<Checkbox
+								id="uppercase"
+								checked={options.includeUppercase}
+								onCheckedChange={(checked) => handleOptionChange("includeUppercase")(!!checked)}
+							/>
+							<Label htmlFor="uppercase" className="text-neutral-700 dark:text-neutral-300">
+								Uppercase (A-Z)
+							</Label>
+						</div>
+
+						<div className="flex items-center space-x-2">
+							<Checkbox
+								id="lowercase"
+								checked={options.includeLowercase}
+								onCheckedChange={(checked) => handleOptionChange("includeLowercase")(!!checked)}
+							/>
+							<Label htmlFor="lowercase" className="text-neutral-700 dark:text-neutral-300">
+								Lowercase (a-z)
+							</Label>
+						</div>
+
+						<div className="flex items-center space-x-2">
+							<Checkbox
+								id="numbers"
+								checked={options.includeNumbers}
+								onCheckedChange={(checked) => handleOptionChange("includeNumbers")(!!checked)}
+							/>
+							<Label htmlFor="numbers" className="text-neutral-700 dark:text-neutral-300">
+								Numbers (0-9)
+							</Label>
+						</div>
+
+						<div className="flex items-center space-x-2">
+							<Checkbox
+								id="symbols"
+								checked={options.includeSymbols}
+								onCheckedChange={(checked) => handleOptionChange("includeSymbols")(!!checked)}
+							/>
+							<Label htmlFor="symbols" className="text-neutral-700 dark:text-neutral-300">
+								Symbols (!@#$%^&*)
+							</Label>
+						</div>
+
+						<div className="flex items-center space-x-2">
+							<Checkbox
+								id="exclude-similar"
+								checked={options.excludeSimilar}
+								onCheckedChange={(checked) => handleOptionChange("excludeSimilar")(!!checked)}
+							/>
+							<Label htmlFor="exclude-similar" className="text-neutral-700 dark:text-neutral-300">
+								Exclude similar characters (i, l, 1, L, o, 0, O)
+							</Label>
+						</div>
+					</div>
+				</CardContent>
+			</Card>
 		</div>
 	);
 }

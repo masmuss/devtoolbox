@@ -6,7 +6,8 @@
 		"useIgnoreFile": true
 	},
 	"files": {
-		"ignoreUnknown": false
+		"ignoreUnknown": false,
+		"includes": ["!**/src/components/ui/**/*"]
 	},
 	"formatter": {
 		"indentStyle": "tab",
