@@ -1,110 +1,14 @@
 ---
-import ToolCard from "@/components/ToolCard.astro";
+import CTA from "@/components/sections/home/CTA.tsx";
+import Features from "@/components/sections/home/Features.tsx";
+import Hero from "@/components/sections/home/Hero.tsx";
+import Tools from "@/components/sections/home/Tools.tsx";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-
-const tools = [
-	{
-		title: "Password Generator",
-		description: "Generate secure passwords with customizable options",
-		href: "/tools/password-generator",
-		icon: "🔐",
-		category: "Security",
-	},
-	{
-		title: "JWT Generator",
-		description: "Create and decode JSON Web Tokens",
-		href: "/tools/jwt-generator",
-		icon: "🎫",
-		category: "Security",
-	},
-	{
-		title: "Slug Generator",
-		description: "Convert text to URL-friendly slugs",
-		href: "/tools/slug-generator",
-		icon: "🔗",
-		category: "Text",
-	},
-	{
-		title: "Hash Generator",
-		description: "Generate MD5, SHA-1, SHA-256 hashes",
-		href: "/tools/hash-generator",
-		icon: "#️⃣",
-		category: "Security",
-	},
-	{
-		title: "JSON Formatter",
-		description: "Format and validate JSON data",
-		href: "/tools/json-formatter",
-		icon: "📄",
-		category: "Data",
-	},
-	{
-		title: "Base64 Encoder",
-		description: "Encode and decode Base64 strings",
-		href: "/tools/base64-encoder",
-		icon: "🔤",
-		category: "Encoding",
-	},
-];
-
-const categories = [...new Set(tools.map((tool) => tool.category))];
 ---
 
 <BaseLayout title="DevTools - Developer Utilities Collection">
-	<div class="mb-12 text-center">
-		<h1 class="mb-4 text-4xl font-bold text-gray-900">Developer Tools Collection</h1>
-		<p class="mx-auto max-w-2xl text-xl text-gray-600">
-			A curated collection of essential tools for developers. Fast, secure, and works entirely in
-			your browser.
-		</p>
-	</div>
-
-	<div class="mb-8">
-		<div class="flex flex-wrap justify-center gap-2">
-			{
-				categories.map((category) => (
-					<span class="rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-800">
-						{category}
-					</span>
-				))
-			}
-		</div>
-	</div>
-
-	<div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-		{
-			tools.map((tool) => (
-				<ToolCard
-					title={tool.title}
-					description={tool.description}
-					href={tool.href}
-					icon={tool.icon}
-					category={tool.category}
-				/>
-			))
-		}
-	</div>
-
-	<div class="mt-16 rounded-lg bg-white p-8 shadow-sm">
-		<h2 class="mb-12 text-center text-2xl font-bold text-gray-900">Why Use These Tools?</h2>
-		<div class="grid grid-cols-1 gap-6 md:grid-cols-3">
-			<div class="text-center">
-				<div class="mb-2 text-3xl">⚡</div>
-				<h3 class="mb-2 font-semibold text-gray-900">Lightning Fast</h3>
-				<p class="text-gray-600">
-					All tools work instantly in your browser without server requests
-				</p>
-			</div>
-			<div class="text-center">
-				<div class="mb-2 text-3xl">🔒</div>
-				<h3 class="mb-2 font-semibold text-gray-900">Privacy First</h3>
-				<p class="text-gray-600">Your data never leaves your device. Everything runs locally</p>
-			</div>
-			<div class="text-center">
-				<div class="mb-2 text-3xl">📱</div>
-				<h3 class="mb-2 font-semibold text-gray-900">Mobile Friendly</h3>
-				<p class="text-gray-600">Responsive design that works perfectly on all devices</p>
-			</div>
-		</div>
-	</div>
+	<Hero />
+	<Tools client:load />
+	<Features client:load />
+	<CTA client:load />
 </BaseLayout>

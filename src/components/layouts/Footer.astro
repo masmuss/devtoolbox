@@ -1,0 +1,15 @@
+---
+import { Code } from "lucide-react";
+import { siteConfig } from "@/lib/data/constants";
+---
+
+<footer class="border-t bg-white py-12 dark:border-neutral-700 dark:bg-neutral-800">
+	<div class="container mx-auto px-4">
+		<div class="flex flex-col items-center justify-center md:flex-row">
+			<p class="text-sm text-neutral-600 dark:text-neutral-300">
+				© {new Date().getFullYear()}
+				{siteConfig.name}
+			</p>
+		</div>
+	</div>
+</footer>

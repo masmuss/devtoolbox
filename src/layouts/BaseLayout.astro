@@ -1,10 +1,13 @@
 ---
+import Header from "@/components/layouts/Header.astro";
+
 interface Props {
 	title: string;
 	description?: string;
 }
 
-import "../styles/global.css";
+import "@/styles/global.css";
+import Footer from "@/components/layouts/Footer.astro";
 
 const { title, description = "Collection of useful developer tools" } = Astro.props;
 ---
@@ -18,42 +21,15 @@ const { title, description = "Collection of useful developer tools" } = Astro.pr
 		<meta name="description" content={description} />
 		<link rel="icon" type="image/x-icon" href="/favicon.svg" />
 	</head>
-	<body class="min-h-screen bg-gray-50">
-		<header class="border-b bg-white shadow-sm">
-			<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-				<div class="flex items-center justify-between py-4">
-					<div class="flex items-center">
-						<h1 class="text-2xl font-bold text-gray-900">
-							<a href="/">DevTools</a>
-						</h1>
-					</div>
-					<nav class="hidden space-x-8 md:flex">
-						<a href="/" class="text-gray-700 transition-colors hover:text-blue-600">Home</a>
-						<a
-							href="/tools/password-generator"
-							class="text-gray-700 transition-colors hover:text-blue-600">Password</a
-						>
-						<a
-							href="/tools/jwt-generator"
-							class="text-gray-700 transition-colors hover:text-blue-600">JWT</a
-						>
-						<a
-							href="/tools/slug-generator"
-							class="text-gray-700 transition-colors hover:text-blue-600">Slug</a
-						>
-					</nav>
-				</div>
-			</div>
-		</header>
+	<body
+		class="min-h-screen bg-gradient-to-br from-neutral-50 to-neutral-100 dark:from-neutral-900 dark:to-neutral-800"
+	>
+		<Header />
 
-		<main class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+		<main class="mx-auto">
 			<slot />
 		</main>
 
-		<footer class="mt-16 border-t bg-white">
-			<div class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-				<p class="text-center text-gray-500">&copy; 2025 DevTools. Built with Astro.</p>
-			</div>
-		</footer>
+		<Footer />
 	</body>
 </html>
