@@ -4,21 +4,20 @@ All notable changes to this project will be documented in this file. See [commit
 
 ## 0.0.2 (2025-08-14)
 
-
 ### Features
 
-* add hash generator page and feature 804cbda
-* add homepage and generate password page 9dc575e
-* add shadcn-ui library a21997d
-* add slug generator page and feature 8ac3a4c
-* **dev:** setup local dev tools faa3175
-* **lib:** add tailwind and preact da73a17
-* redesign generate password page 030ad67
-* **tool:** add hmac generator feature 8050432
-* **tool:** add jwt token generator feature d2097a5
-* **tool:** add lorem ipsum generator feature 7e1c6c1
-* **tool:** add rsa key generator feature 859272d
-* **tool:** add url encode and decoder 10ddd90
+- add hash generator page and feature 804cbda
+- add homepage and generate password page 9dc575e
+- add shadcn-ui library a21997d
+- add slug generator page and feature 8ac3a4c
+- **dev:** setup local dev tools faa3175
+- **lib:** add tailwind and preact da73a17
+- redesign generate password page 030ad67
+- **tool:** add hmac generator feature 8050432
+- **tool:** add jwt token generator feature d2097a5
+- **tool:** add lorem ipsum generator feature 7e1c6c1
+- **tool:** add rsa key generator feature 859272d
+- **tool:** add url encode and decoder 10ddd90
 
 ## 0.0.89 (2025-08-11)
 

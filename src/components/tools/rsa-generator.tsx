@@ -1,31 +1,6 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import {
-	Select,
-	SelectContent,
-	SelectItem,
-	SelectTrigger,
-	SelectValue,
-} from "@/components/ui/select";
-import {
-	AlertTriangle,
-	CheckCircle,
-	Download,
-	Eye,
-	EyeOff,
-	Key,
-	Lock,
-	Shield,
-	Unlock,
-} from "lucide-react";
-import { CopyButton } from "../copy-button";
-import { useState } from "react";
-import { Badge } from "../ui/badge";
-import { Separator } from "@radix-ui/react-select";
 import { KeyConfiguration } from "../partials/rsa/key-configuration";
 import { KeyDisplay } from "../partials/rsa/key-display";
+import { useToolState } from "@/lib/hooks/use-tool-state.ts";
 
 interface RSAState {
 	keySize: string;
@@ -36,23 +11,13 @@ interface RSAState {
 }
 
 export default function RSAGeneratorComponent() {
-	const [state, setState] = useState<RSAState>({
+	const { state, updateState, clearState } = useToolState<RSAState>({
 		keySize: "2048",
 		publicKey: "",
 		privateKey: "",
 		showPrivateKey: false,
 		isProcessing: false,
 	});
-
-	const updateState = (updates: Partial<RSAState>) => setState((prev) => ({ ...prev, ...updates }));
-	const clearState = () =>
-		setState({
-			keySize: "2048",
-			publicKey: "",
-			privateKey: "",
-			showPrivateKey: false,
-			isProcessing: false,
-		});
 
 	const generateRSAKeys = async () => {
 		updateState({ isProcessing: true });
@@ -86,36 +51,6 @@ export default function RSAGeneratorComponent() {
 		const formatted = base64.match(/.{1,64}/g)?.join("\n") || base64;
 		return `-----BEGIN ${type}-----\n${formatted}\n-----END ${type}-----`;
 	};
-
-	const downloadKey = (key: string, filename: string) => {
-		const blob = new Blob([key], { type: "text/plain" });
-		const url = URL.createObjectURL(blob);
-		const a = document.createElement("a");
-		a.href = url;
-		a.download = filename;
-		document.body.appendChild(a);
-		a.click();
-		document.body.removeChild(a);
-		URL.revokeObjectURL(url);
-	};
-
-	const getSecurityLevel = (keySize: string) => {
-		switch (keySize) {
-			case "1024":
-				return { level: "Low", color: "destructive", icon: AlertTriangle };
-			case "2048":
-				return { level: "Good", color: "default", icon: CheckCircle };
-			case "3072":
-				return { level: "High", color: "secondary", icon: Shield };
-			case "4096":
-				return { level: "Maximum", color: "secondary", icon: Shield };
-			default:
-				return { level: "Unknown", color: "outline", icon: AlertTriangle };
-		}
-	};
-
-	const security = getSecurityLevel(state.keySize);
-	const SecurityIcon = security.icon;
 
 	return (
 		<div className="grid gap-6 lg:grid-cols-3">
