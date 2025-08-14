@@ -1,0 +1,16 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import PageHeader from "@/components/layouts/PageHeader.astro";
+import LoremGeneratorComponent from "@/components/tools/lorem-generator";
+---
+
+<BaseLayout title="Lorem Ipsum Generator" description="Generate placeholder text for your designs">
+	<main class="mx-auto max-w-5xl px-6 py-12 lg:px-8">
+		<PageHeader
+			title="Lorem Ipsum Generator"
+			description="Generate placeholder text for your designs"
+		/>
+
+		<LoremGeneratorComponent client:load />
+	</main>
+</BaseLayout>
