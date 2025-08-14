@@ -9,7 +9,7 @@ import { Slider } from "@/components/ui/slider";
 import { CopyButton } from "../copy-button";
 import { useClipboard } from "@/lib/hooks/use-clipboard";
 
-export default function PasswordGeneratorPage() {
+export default function PasswordGeneratorComponent() {
 	const [options, setOptions] = useState({
 		includeUppercase: true,
 		includeLowercase: true,
