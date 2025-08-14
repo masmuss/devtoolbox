@@ -77,10 +77,10 @@ export function KeyConfiguration({
 								<SecurityIcon className="h-3 w-3" />
 								{security.level} Security
 							</Badge>
-							<span className="text-sm text-gray-500 dark:text-gray-400">{keySize} bits</span>
+							<span className="text-sm text-neutral-500 dark:text-neutral-400">{keySize} bits</span>
 						</div>
 
-						<div className="text-sm text-gray-600 dark:text-gray-400">
+						<div className="text-sm text-neutral-600 dark:text-neutral-400">
 							{keySize === "1024" && "⚠️ Deprecated - Not secure for production"}
 							{keySize === "2048" && "✅ Industry standard - Secure until ~2030"}
 							{keySize === "3072" && "✅ High security - Equivalent to 128-bit AES"}
@@ -112,10 +112,10 @@ export function KeyConfiguration({
 				</CardHeader>
 				<CardContent className="space-y-3 text-sm">
 					<div>
-						<div className="mb-2 font-medium text-gray-900 dark:text-white">
+						<div className="mb-2 font-medium text-neutral-900 dark:text-white">
 							Key Size Recommendations:
 						</div>
-						<div className="space-y-1 text-gray-600 dark:text-gray-400">
+						<div className="space-y-1 text-neutral-600 dark:text-neutral-400">
 							<div>
 								• <strong>2048 bits:</strong> Standard security
 							</div>
@@ -127,9 +127,9 @@ export function KeyConfiguration({
 							</div>
 						</div>
 					</div>
-					<div className="border-t border-gray-200 pt-2 dark:border-gray-700">
+					<div className="border-t border-neutral-200 pt-2 dark:border-neutral-700">
 						<div className="font-medium text-red-600 dark:text-red-400">⚠️ Security Warning</div>
-						<div className="mt-1 text-gray-600 dark:text-gray-400">
+						<div className="mt-1 text-neutral-600 dark:text-neutral-400">
 							Never share your private key. Store it securely and use strong passphrases.
 						</div>
 					</div>

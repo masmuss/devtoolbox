@@ -76,10 +76,10 @@ export default function HashGeneratorComponent() {
 
 	return (
 		<div className="grid gap-8">
-			<Card className="border-gray-200 dark:border-gray-800">
+			<Card className="border-neutral-200 dark:border-neutral-800">
 				<CardHeader>
 					<CardTitle className="text-black dark:text-white">Input Text</CardTitle>
-					<CardDescription className="text-gray-600 dark:text-gray-400">
+					<CardDescription className="text-neutral-600 dark:text-neutral-400">
 						Enter the text you want to hash
 					</CardDescription>
 				</CardHeader>
@@ -88,7 +88,7 @@ export default function HashGeneratorComponent() {
 						value={state.input}
 						onChange={(e) => updateState({ input: e.target.value })}
 						placeholder="Enter your text here..."
-						className="min-h-32 border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-gray-900"
+						className="min-h-32 border-neutral-200 bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-900"
 					/>
 					<div className="flex flex-col gap-4 sm:flex-row">
 						<div className="flex-1">
@@ -97,7 +97,7 @@ export default function HashGeneratorComponent() {
 									value={state.hashType}
 									onValueChange={(v) => updateState({ hashType: v as typeof state.hashType })}
 								>
-									<SelectTrigger className="border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-gray-900">
+									<SelectTrigger className="border-neutral-200 bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-900">
 										<SelectValue placeholder="Select hash algorithm" />
 									</SelectTrigger>
 									<SelectContent>
@@ -115,7 +115,7 @@ export default function HashGeneratorComponent() {
 						</div>
 						<Button
 							onClick={generateHash}
-							className="bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200"
+							className="bg-black text-white hover:bg-neutral-800 dark:bg-white dark:text-black dark:hover:bg-neutral-200"
 						>
 							Generate Hash
 						</Button>
@@ -123,10 +123,10 @@ export default function HashGeneratorComponent() {
 				</CardContent>
 			</Card>
 
-			<Card className="border-gray-200 dark:border-gray-800">
+			<Card className="border-neutral-200 dark:border-neutral-800">
 				<CardHeader>
 					<CardTitle className="text-black dark:text-white">Generated Hash</CardTitle>
-					<CardDescription className="text-gray-600 dark:text-gray-400">
+					<CardDescription className="text-neutral-600 dark:text-neutral-400">
 						Your {state.hashType.toUpperCase()} hash will appear here
 					</CardDescription>
 				</CardHeader>
@@ -136,7 +136,7 @@ export default function HashGeneratorComponent() {
 							value={state.output}
 							readOnly
 							placeholder="Your hash will appear here after generation..."
-							className="min-h-24 max-w-full resize-none border-gray-200 bg-gray-50 font-mono text-sm dark:border-gray-800 dark:bg-gray-900"
+							className="min-h-24 max-w-full resize-none border-neutral-200 bg-neutral-50 font-mono text-sm dark:border-neutral-800 dark:bg-neutral-900"
 						/>
 						{state.output &&
 							state.output !== "Please enter some text to hash" &&
@@ -144,7 +144,7 @@ export default function HashGeneratorComponent() {
 								<div className="absolute top-2 right-2">
 									<CopyButton
 										text={state.output}
-										className="h-8 w-8 p-0 hover:bg-gray-100 dark:hover:bg-gray-800"
+										className="h-8 w-8 p-0 hover:bg-neutral-100 dark:hover:bg-neutral-800"
 									/>
 								</div>
 							)}

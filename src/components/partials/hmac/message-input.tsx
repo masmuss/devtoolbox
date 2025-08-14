@@ -30,7 +30,7 @@ export function MessageInput({ message, onMessageChange }: MessageInputProps) {
 							className="min-h-[120px]"
 						/>
 					</div>
-					<div className="text-sm text-gray-500 dark:text-gray-400">
+					<div className="text-sm text-neutral-500 dark:text-neutral-400">
 						Message length: {message.length} characters
 					</div>
 				</div>

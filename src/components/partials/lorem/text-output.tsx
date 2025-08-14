@@ -20,7 +20,7 @@ export function TextOutput({ generatedText }: TextOutputProps) {
 					{generatedText && (
 						<>
 							<div className="flex items-center justify-between">
-								<div className="text-sm text-gray-500 dark:text-gray-400">
+								<div className="text-sm text-neutral-500 dark:text-neutral-400">
 									{getWordCount(generatedText)} words, {getCharacterCount(generatedText)} characters
 								</div>
 								<CopyButton text={generatedText} label="Copy text" variant="outline" size="sm" />
@@ -35,7 +35,7 @@ export function TextOutput({ generatedText }: TextOutputProps) {
 					)}
 
 					{!generatedText && (
-						<div className="py-12 text-center text-gray-500 dark:text-gray-400">
+						<div className="py-12 text-center text-neutral-500 dark:text-neutral-400">
 							<Type className="mx-auto mb-4 h-12 w-12 opacity-50" />
 							<p>Click "Generate Text" to create Lorem Ipsum</p>
 						</div>

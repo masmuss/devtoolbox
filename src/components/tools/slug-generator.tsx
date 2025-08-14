@@ -87,10 +87,10 @@ export default function SlugGeneratorComponent() {
 	return (
 		<div className="mb-8 grid gap-8">
 			{/* Input Section */}
-			<Card className="border-gray-200 dark:border-gray-800">
+			<Card className="border-neutral-200 dark:border-neutral-800">
 				<CardHeader>
 					<CardTitle className="text-black dark:text-white">Input Text</CardTitle>
-					<CardDescription className="text-gray-600 dark:text-gray-400">
+					<CardDescription className="text-neutral-600 dark:text-neutral-400">
 						Enter the text you want to convert to a slug
 					</CardDescription>
 				</CardHeader>
@@ -99,12 +99,14 @@ export default function SlugGeneratorComponent() {
 						value={state.input}
 						onChange={(e) => updateState({ input: e.target.value })}
 						placeholder="Enter your text here..."
-						className="min-h-24 border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-gray-900"
+						className="min-h-24 border-neutral-200 bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-900"
 					/>
 
 					{/* Example buttons */}
 					<div className="space-y-2">
-						<Label className="text-sm text-gray-600 dark:text-gray-400">Try these examples:</Label>
+						<Label className="text-sm text-neutral-600 dark:text-neutral-400">
+							Try these examples:
+						</Label>
 						<div className="flex flex-wrap gap-2">
 							{exampleTexts.map((text, index) => (
 								<Button
@@ -112,7 +114,7 @@ export default function SlugGeneratorComponent() {
 									variant="outline"
 									size="sm"
 									onClick={() => loadExample(text)}
-									className="border-gray-200 text-xs hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-900"
+									className="border-neutral-200 text-xs hover:bg-neutral-50 dark:border-neutral-800 dark:hover:bg-neutral-900"
 								>
 									{text.length > 30 ? text.substring(0, 30) + "..." : text}
 								</Button>
@@ -130,10 +132,10 @@ export default function SlugGeneratorComponent() {
 			</Card>
 
 			{/* Options */}
-			<Card className="border-gray-200 dark:border-gray-800">
+			<Card className="border-neutral-200 dark:border-neutral-800">
 				<CardHeader>
 					<CardTitle className="text-black dark:text-white">Options</CardTitle>
-					<CardDescription className="text-gray-600 dark:text-gray-400">
+					<CardDescription className="text-neutral-600 dark:text-neutral-400">
 						Customize how your slug is generated
 					</CardDescription>
 				</CardHeader>
@@ -146,7 +148,7 @@ export default function SlugGeneratorComponent() {
 								value={state.separator}
 								onValueChange={(val) => updateState({ separator: val })}
 							>
-								<SelectTrigger className="border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-gray-900">
+								<SelectTrigger className="border-neutral-200 bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-900">
 									<SelectValue />
 								</SelectTrigger>
 								<SelectContent>
@@ -167,7 +169,7 @@ export default function SlugGeneratorComponent() {
 								placeholder="No limit"
 								min="1"
 								max="200"
-								className="border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-gray-900"
+								className="border-neutral-200 bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-900"
 							/>
 						</div>
 					</div>
@@ -179,7 +181,7 @@ export default function SlugGeneratorComponent() {
 								checked={state.lowercase}
 								onCheckedChange={(checked) => updateState({ lowercase: !!checked })}
 							/>
-							<Label htmlFor="lowercase" className="text-gray-700 dark:text-gray-300">
+							<Label htmlFor="lowercase" className="text-neutral-700 dark:text-neutral-300">
 								Convert to lowercase
 							</Label>
 						</div>
@@ -190,7 +192,7 @@ export default function SlugGeneratorComponent() {
 								checked={state.removeSpecialChars}
 								onCheckedChange={(checked) => updateState({ removeSpecialChars: !!checked })}
 							/>
-							<Label htmlFor="remove-special" className="text-gray-700 dark:text-gray-300">
+							<Label htmlFor="remove-special" className="text-neutral-700 dark:text-neutral-300">
 								Remove special characters and accents
 							</Label>
 						</div>
@@ -199,10 +201,10 @@ export default function SlugGeneratorComponent() {
 			</Card>
 
 			{/* Output Section */}
-			<Card className="border-gray-200 dark:border-gray-800">
+			<Card className="border-neutral-200 dark:border-neutral-800">
 				<CardHeader>
 					<CardTitle className="text-black dark:text-white">Generated Slug</CardTitle>
-					<CardDescription className="text-gray-600 dark:text-gray-400">
+					<CardDescription className="text-neutral-600 dark:text-neutral-400">
 						Your URL-friendly slug will appear here automatically
 					</CardDescription>
 				</CardHeader>
@@ -212,7 +214,7 @@ export default function SlugGeneratorComponent() {
 							value={output}
 							readOnly
 							placeholder="Your slug will appear here..."
-							className="border-gray-200 bg-gray-50 pr-12 font-mono text-sm dark:border-gray-800 dark:bg-gray-900"
+							className="border-neutral-200 bg-neutral-50 pr-12 font-mono text-sm dark:border-neutral-800 dark:bg-neutral-900"
 						/>
 						{output && (
 							<CopyButton
@@ -224,9 +226,9 @@ export default function SlugGeneratorComponent() {
 
 					{/* Preview URL */}
 					{output && (
-						<div className="rounded-lg bg-gray-50 p-3 dark:bg-gray-900">
-							<Label className="text-sm text-gray-600 dark:text-gray-400">Preview URL:</Label>
-							<p className="font-mono text-sm break-all text-gray-800 dark:text-gray-200">
+						<div className="rounded-lg bg-neutral-50 p-3 dark:bg-neutral-900">
+							<Label className="text-sm text-neutral-600 dark:text-neutral-400">Preview URL:</Label>
+							<p className="font-mono text-sm break-all text-neutral-800 dark:text-neutral-200">
 								https://example.com/blog/{output}
 							</p>
 						</div>

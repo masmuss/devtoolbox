@@ -43,7 +43,7 @@ export function HMACOutput({
 								<CopyButton text={output} label="Copy" variant="outline" size="sm" />
 							</div>
 							<Textarea value={output} readOnly className="font-mono text-sm break-all" rows={3} />
-							<div className="text-sm text-gray-500 dark:text-gray-400">
+							<div className="text-sm text-neutral-500 dark:text-neutral-400">
 								Length: {output.length} characters
 							</div>
 						</div>

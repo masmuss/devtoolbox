@@ -192,9 +192,9 @@ export default function JWTGeneratorComponent() {
 									onClick={() => setShowSecret(!showSecret)}
 								>
 									{showSecret ? (
-										<EyeOff className="h-4 w-4 text-gray-500" />
+										<EyeOff className="h-4 w-4 text-neutral-500" />
 									) : (
-										<Eye className="h-4 w-4 text-gray-500" />
+										<Eye className="h-4 w-4 text-neutral-500" />
 									)}
 								</Button>
 							</div>
@@ -238,7 +238,7 @@ export default function JWTGeneratorComponent() {
 					<CardHeader>
 						<CardTitle>About JWT</CardTitle>
 					</CardHeader>
-					<CardContent className="space-y-3 text-sm text-gray-600 dark:text-gray-400">
+					<CardContent className="space-y-3 text-sm text-neutral-600 dark:text-neutral-400">
 						<p>
 							<strong>JSON Web Tokens (JWT)</strong> are a compact, URL-safe means of representing
 							claims between two parties.

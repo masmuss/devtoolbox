@@ -82,7 +82,7 @@ export default function URLEncoderComponent() {
 	return (
 		<Tabs defaultValue="encode" className="space-y-8">
 			<div className="flex justify-center">
-				<TabsList className="grid w-full max-w-md grid-cols-2 bg-gray-100 dark:bg-gray-900">
+				<TabsList className="grid w-full max-w-md grid-cols-2 bg-neutral-100 dark:bg-neutral-900">
 					<TabsTrigger
 						value="encode"
 						className="data-[state=active]:bg-white dark:data-[state=active]:bg-black"
@@ -100,10 +100,10 @@ export default function URLEncoderComponent() {
 
 			{/* Encode Tab */}
 			<TabsContent value="encode" className="space-y-8">
-				<Card className="border-gray-200 dark:border-gray-800">
+				<Card className="border-neutral-200 dark:border-neutral-800">
 					<CardHeader>
 						<CardTitle className="text-black dark:text-white">URL Encode</CardTitle>
-						<CardDescription className="text-gray-600 dark:text-gray-400">
+						<CardDescription className="text-neutral-600 dark:text-neutral-400">
 							Convert special characters to percent-encoded format
 						</CardDescription>
 					</CardHeader>
@@ -114,21 +114,21 @@ export default function URLEncoderComponent() {
 								value={state.encodeInput}
 								onChange={(e) => updateState({ encodeInput: e.target.value })}
 								placeholder="Enter text or URL to encode..."
-								className="min-h-24 border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-gray-900"
+								className="min-h-24 border-neutral-200 bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-900"
 							/>
 						</div>
 
 						<div className="flex flex-wrap gap-2">
 							<Button
 								onClick={encodeURL}
-								className="bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200"
+								className="bg-black text-white hover:bg-neutral-800 dark:bg-white dark:text-black dark:hover:bg-neutral-200"
 							>
 								Encode URL
 							</Button>
 							<Button
 								onClick={clearEncode}
 								variant="outline"
-								className="border-gray-200 bg-transparent hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-900"
+								className="border-neutral-200 bg-transparent hover:bg-neutral-50 dark:border-neutral-800 dark:hover:bg-neutral-900"
 							>
 								<RefreshCw className="mr-2 h-4 w-4" />
 								Clear
@@ -136,7 +136,7 @@ export default function URLEncoderComponent() {
 							<Button
 								onClick={swapEncodeDecode}
 								variant="outline"
-								className="border-gray-200 bg-transparent hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-900"
+								className="border-neutral-200 bg-transparent hover:bg-neutral-50 dark:border-neutral-800 dark:hover:bg-neutral-900"
 							>
 								<ArrowUpDown className="mr-2 h-4 w-4" />
 								Swap with Decode
@@ -150,7 +150,7 @@ export default function URLEncoderComponent() {
 									value={state.encodeOutput}
 									readOnly
 									placeholder="Encoded URL will appear here..."
-									className="min-h-24 resize-none border-gray-200 bg-gray-50 font-mono text-sm dark:border-gray-800 dark:bg-gray-900"
+									className="min-h-24 resize-none border-neutral-200 bg-neutral-50 font-mono text-sm dark:border-neutral-800 dark:bg-neutral-900"
 								/>
 								{state.encodeOutput && !state.encodeOutput.startsWith("Error:") && (
 									<CopyButton
@@ -171,7 +171,7 @@ export default function URLEncoderComponent() {
 										variant="outline"
 										size="sm"
 										onClick={() => updateState({ encodeInput: url })}
-										className="h-auto justify-start border-gray-200 p-3 text-left hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-900"
+										className="h-auto justify-start border-neutral-200 p-3 text-left hover:bg-neutral-50 dark:border-neutral-800 dark:hover:bg-neutral-900"
 									>
 										<span className="truncate text-xs">{url}</span>
 									</Button>
@@ -184,10 +184,10 @@ export default function URLEncoderComponent() {
 
 			{/* Decode Tab */}
 			<TabsContent value="decode" className="space-y-8">
-				<Card className="border-gray-200 dark:border-gray-800">
+				<Card className="border-neutral-200 dark:border-neutral-800">
 					<CardHeader>
 						<CardTitle className="text-black dark:text-white">URL Decode</CardTitle>
-						<CardDescription className="text-gray-600 dark:text-gray-400">
+						<CardDescription className="text-neutral-600 dark:text-neutral-400">
 							Convert percent-encoded characters back to readable format
 						</CardDescription>
 					</CardHeader>
@@ -200,21 +200,21 @@ export default function URLEncoderComponent() {
 								value={state.decodeInput}
 								onChange={(e) => updateState({ decodeInput: e.target.value })}
 								placeholder="Enter encoded URL to decode..."
-								className="min-h-24 border-gray-200 bg-gray-50 font-mono text-sm dark:border-gray-800 dark:bg-gray-900"
+								className="min-h-24 border-neutral-200 bg-neutral-50 font-mono text-sm dark:border-neutral-800 dark:bg-neutral-900"
 							/>
 						</div>
 
 						<div className="flex flex-wrap gap-2">
 							<Button
 								onClick={decodeURL}
-								className="bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200"
+								className="bg-black text-white hover:bg-neutral-800 dark:bg-white dark:text-black dark:hover:bg-neutral-200"
 							>
 								Decode URL
 							</Button>
 							<Button
 								onClick={clearDecode}
 								variant="outline"
-								className="border-gray-200 bg-transparent hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-900"
+								className="border-neutral-200 bg-transparent hover:bg-neutral-50 dark:border-neutral-800 dark:hover:bg-neutral-900"
 							>
 								<RefreshCw className="mr-2 h-4 w-4" />
 								Clear
@@ -222,7 +222,7 @@ export default function URLEncoderComponent() {
 							<Button
 								onClick={swapEncodeDecode}
 								variant="outline"
-								className="border-gray-200 bg-transparent hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-900"
+								className="border-neutral-200 bg-transparent hover:bg-neutral-50 dark:border-neutral-800 dark:hover:bg-neutral-900"
 							>
 								<ArrowUpDown className="mr-2 h-4 w-4" />
 								Swap with Encode
@@ -238,7 +238,7 @@ export default function URLEncoderComponent() {
 									value={state.decodeOutput}
 									readOnly
 									placeholder="Decoded URL will appear here..."
-									className="min-h-24 resize-none border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-gray-900"
+									className="min-h-24 resize-none border-neutral-200 bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-900"
 								/>
 								{state.decodeOutput && !state.decodeOutput.startsWith("Error:") && (
 									<CopyButton
@@ -259,7 +259,7 @@ export default function URLEncoderComponent() {
 										variant="outline"
 										size="sm"
 										onClick={() => updateState({ decodeInput: url })}
-										className="h-auto justify-start border-gray-200 p-3 text-left hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-900"
+										className="h-auto justify-start border-neutral-200 p-3 text-left hover:bg-neutral-50 dark:border-neutral-800 dark:hover:bg-neutral-900"
 									>
 										<span className="truncate font-mono text-xs">{url}</span>
 									</Button>

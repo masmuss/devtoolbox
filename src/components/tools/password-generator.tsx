@@ -71,7 +71,7 @@ export default function PasswordGeneratorComponent() {
 							<CopyButton
 								text={password}
 								disabled={!password || password === "Please select at least one character type"}
-								className="h-8 w-8 p-0 hover:bg-gray-100 dark:hover:bg-gray-800"
+								className="h-8 w-8 p-0 hover:bg-neutral-100 dark:hover:bg-neutral-800"
 							/>
 							<Button
 								size="sm"

@@ -6,7 +6,7 @@ export function HMACInfo() {
 			<CardHeader>
 				<CardTitle>About HMAC</CardTitle>
 			</CardHeader>
-			<CardContent className="space-y-3 text-sm text-gray-600 dark:text-gray-400">
+			<CardContent className="space-y-3 text-sm text-neutral-600 dark:text-neutral-400">
 				<p>
 					<strong>HMAC (Hash-based Message Authentication Code)</strong> is a mechanism for message
 					authentication using cryptographic hash functions.

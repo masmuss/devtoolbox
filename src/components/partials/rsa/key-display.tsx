@@ -28,11 +28,11 @@ export function KeyDisplay(props: KeyDisplayProps) {
 		return (
 			<Card className="border-dashed">
 				<CardContent className="flex flex-col items-center justify-center py-12 text-center">
-					<Key className="mb-4 h-12 w-12 text-gray-400" />
-					<h3 className="mb-2 text-lg font-medium text-gray-900 dark:text-white">
+					<Key className="mb-4 h-12 w-12 text-neutral-400" />
+					<h3 className="mb-2 text-lg font-medium text-neutral-900 dark:text-white">
 						No Keys Generated
 					</h3>
-					<p className="mb-4 text-gray-500 dark:text-gray-400">
+					<p className="mb-4 text-neutral-500 dark:text-neutral-400">
 						Click "Generate Key Pair" to create your RSA keys
 					</p>
 					<Button onClick={onGenerate} disabled={isProcessing}>
