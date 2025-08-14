@@ -1,0 +1,48 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import PageHeader from "@/components/layouts/PageHeader.astro";
+import RSAGeneratorComponent from "@/components/tools/rsa-generator";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+---
+
+<BaseLayout title="RSA Key Generator" description="Generate RSA public and private key pairs">
+	<main class="mx-auto max-w-5xl px-6 py-12 lg:px-8">
+		<PageHeader title="RSA Key Generator" description="Generate RSA public and private key pairs" />
+
+		<RSAGeneratorComponent client:load />
+
+		<Card className="mt-8">
+			<CardHeader>
+				<CardTitle>About RSA Keys</CardTitle>
+			</CardHeader>
+			<CardContent className="space-y-3 text-sm text-gray-600 dark:text-gray-400">
+				<p>
+					<strong>RSA (Rivest-Shamir-Adleman)</strong> is a public-key cryptosystem widely used for secure
+					data transmission and digital signatures.
+				</p>
+				<div class="grid gap-4 md:grid-cols-2">
+					<div>
+						<strong>Common Uses:</strong>
+						<ul class="mt-1 list-inside list-disc space-y-1">
+							<li>SSL/TLS certificates</li>
+							<li>SSH key authentication</li>
+							<li>Digital signatures</li>
+							<li>Email encryption (PGP/GPG)</li>
+							<li>Code signing</li>
+						</ul>
+					</div>
+					<div>
+						<strong>Key Management:</strong>
+						<ul class="mt-1 list-inside list-disc space-y-1">
+							<li>Store private keys securely</li>
+							<li>Use strong passphrases</li>
+							<li>Regular key rotation</li>
+							<li>Backup keys safely</li>
+							<li>Revoke compromised keys</li>
+						</ul>
+					</div>
+				</div>
+			</CardContent>
+		</Card>
+	</main>
+</BaseLayout>

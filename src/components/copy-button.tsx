@@ -8,6 +8,7 @@ interface CopyButtonProps {
 	size?: "sm" | "default" | "lg";
 	variant?: "default" | "outline" | "ghost";
 	className?: string;
+	label?: string;
 }
 
 export function CopyButton({
@@ -16,6 +17,7 @@ export function CopyButton({
 	size = "sm",
 	variant = "ghost",
 	className,
+	label = "Copy to clipboard",
 }: CopyButtonProps) {
 	const { copied, copyToClipboard } = useClipboard();
 
@@ -28,6 +30,7 @@ export function CopyButton({
 			className={className}
 		>
 			{copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
+			{label && <span>{copied ? "Copied!" : `${label}`}</span>}
 		</Button>
 	);
 }
