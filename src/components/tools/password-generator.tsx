@@ -1,4 +1,4 @@
-import { Copy, RefreshCw } from "lucide-react";
+import { RefreshCw } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -6,6 +6,8 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
+import { CopyButton } from "../copy-button";
+import { useClipboard } from "@/lib/hooks/use-clipboard";
 
 export default function PasswordGeneratorPage() {
 	const [options, setOptions] = useState({
@@ -17,7 +19,7 @@ export default function PasswordGeneratorPage() {
 	});
 	const [password, setPassword] = useState<string>("");
 	const [length, setLength] = useState<number[]>([12]);
-	const [copied, setCopied] = useState<boolean>(false);
+	const { copied } = useClipboard();
 
 	const handleOptionChange = (key: keyof typeof options) => (checked: boolean) => {
 		setOptions((prev) => ({ ...prev, [key]: checked }));
@@ -25,31 +27,27 @@ export default function PasswordGeneratorPage() {
 
 	const generatePassword = () => {
 		let charset = "";
+
 		if (options.includeUppercase) charset += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 		if (options.includeLowercase) charset += "abcdefghijklmnopqrstuvwxyz";
 		if (options.includeNumbers) charset += "0123456789";
 		if (options.includeSymbols) charset += "!@#$%^&*()_+-=[]{}|;:,.<>?";
+
 		if (options.excludeSimilar) {
 			charset = charset.replace(/[il1Lo0O]/g, "");
 		}
+
 		if (!charset) {
 			setPassword("Please select at least one character type");
 			return;
 		}
+
 		let result = "";
 		for (let i = 0; i < length[0]; i++) {
 			result += charset.charAt(Math.floor(Math.random() * charset.length));
 		}
-		setPassword(result);
-		setCopied(false);
-	};
 
-	const copyToClipboard = async () => {
-		if (password && password !== "Please select at least one character type") {
-			await navigator.clipboard.writeText(password);
-			setCopied(true);
-			setTimeout(() => setCopied(false), 2000);
-		}
+		setPassword(result);
 	};
 
 	return (
@@ -70,15 +68,11 @@ export default function PasswordGeneratorPage() {
 							className="border-neutral-200 bg-neutral-50 pr-20 font-mono text-sm dark:border-neutral-800 dark:bg-neutral-900"
 						/>
 						<div className="absolute top-1/2 right-2 flex -translate-y-1/2 space-x-1">
-							<Button
-								size="sm"
-								variant="ghost"
-								onClick={copyToClipboard}
+							<CopyButton
+								text={password}
 								disabled={!password || password === "Please select at least one character type"}
-								className="h-8 w-8 p-0 hover:bg-neutral-100 dark:hover:bg-neutral-800"
-							>
-								<Copy className="h-4 w-4" />
-							</Button>
+								className="h-8 w-8 p-0 hover:bg-gray-100 dark:hover:bg-gray-800"
+							/>
 							<Button
 								size="sm"
 								variant="ghost"
@@ -89,11 +83,6 @@ export default function PasswordGeneratorPage() {
 							</Button>
 						</div>
 					</div>
-					{copied && (
-						<p className="text-sm text-green-600 dark:text-green-400">
-							Password copied to clipboard!
-						</p>
-					)}
 					<Button
 						onClick={generatePassword}
 						className="w-full bg-black text-white hover:bg-neutral-800 dark:bg-white dark:text-black dark:hover:bg-neutral-200"

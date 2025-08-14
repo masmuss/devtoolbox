@@ -17,7 +17,7 @@ import PageHeader from "@/components/layouts/PageHeader.astro";
 
 		<HashGeneratorComponent client:load />
 
-		<Card className="border-gray-200 dark:border-gray-800">
+		<Card className="mt-8 border-gray-200 dark:border-gray-800">
 			<CardHeader>
 				<CardTitle className="text-black dark:text-white">Hash Algorithm Information</CardTitle>
 			</CardHeader>
@@ -51,8 +51,10 @@ import PageHeader from "@/components/layouts/PageHeader.astro";
 				</div>
 				<div class="mt-4 rounded-lg bg-gray-50 p-4 dark:bg-gray-900">
 					<p class="text-sm text-gray-600 dark:text-gray-400">
-						<strong>Note:</strong> For password hashing, use specialized algorithms like bcrypt, scrypt,
-						or Argon2 instead of these general-purpose hash functions.
+						<strong>Note:</strong> For password hashing, use specialized algorithms like
+						<code class="font-semibold">bcrypt</code>,
+						<code class="font-semibold">scrypt</code>, or <code class="font-semibold">Argon2</code> instead
+						of these general-purpose hash functions.
 					</p>
 				</div>
 			</CardContent>
