@@ -1,15 +1,21 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { RefreshCw, ArrowUpDown } from "lucide-react";
 import { Label } from "../ui/label";
-import { useFlexibleToolState } from "@/lib/hooks/use-tool-state";
+import { useToolState } from "@/lib/hooks/use-tool-state";
 import { CopyButton } from "@/components/copy-button";
 
+interface URLEncoderState {
+	encodeInput: string;
+	decodeInput: string;
+	encodeOutput: string;
+	decodeOutput: string;
+}
+
 export default function URLEncoderComponent() {
-	const { state, updateState, clearState } = useFlexibleToolState({
+	const { state, updateState, clearState } = useToolState<URLEncoderState>({
 		encodeInput: "",
 		decodeInput: "",
 		encodeOutput: "",

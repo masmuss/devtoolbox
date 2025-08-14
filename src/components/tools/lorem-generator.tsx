@@ -3,7 +3,7 @@ import { TextOutput } from "@/components/partials/lorem/text-output";
 import { QuickPresets } from "@/components/partials/lorem/quick-presets";
 import { LoremInfo } from "@/components/partials/lorem/lorem-info";
 import { generateLoremText } from "@/lib/utils/lorem-generator";
-import { useFlexibleToolState } from "@/lib/hooks/use-tool-state";
+import { useToolState } from "@/lib/hooks/use-tool-state";
 
 interface LoremGeneratorComponentState {
 	type: PresetType;
@@ -13,7 +13,7 @@ interface LoremGeneratorComponentState {
 }
 
 export default function LoremGeneratorComponent() {
-	const { state, updateState, clearState } = useFlexibleToolState<LoremGeneratorComponentState>({
+	const { state, updateState, clearState } = useToolState<LoremGeneratorComponentState>({
 		type: "paragraphs",
 		count: "3",
 		startWithLorem: true,

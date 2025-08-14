@@ -15,15 +15,25 @@ import { Key, Hash } from "lucide-react";
 import { CopyButton } from "@/components/copy-button";
 import { useToolState } from "@/lib/hooks/use-tool-state";
 
-export default function HMACGeneratorComponent() {
-	const { output, setOutput, isProcessing, setIsProcessing } = useToolState();
+interface HMACState {
+	message: string;
+	secretKey: string;
+	algorithm: string;
+	output: string;
+}
 
-	const [message, setMessage] = useState("");
-	const [secretKey, setSecretKey] = useState("");
-	const [algorithm, setAlgorithm] = useState("SHA-256");
+export default function HMACGeneratorComponent() {
+	const { state, updateState, clearState, isProcessing, setIsProcessing } = useToolState<HMACState>(
+		{
+			message: "",
+			secretKey: "",
+			algorithm: "SHA-256",
+			output: "",
+		},
+	);
 
 	const generateHMAC = async () => {
-		if (!message || !secretKey) {
+		if (!state.message || !state.secretKey) {
 			alert("Please provide both message and secret key");
 			return;
 		}
@@ -31,10 +41,9 @@ export default function HMACGeneratorComponent() {
 		setIsProcessing(true);
 		try {
 			const encoder = new TextEncoder();
-			const keyData = encoder.encode(secretKey);
-			const messageData = encoder.encode(message);
+			const keyData = encoder.encode(state.secretKey);
+			const messageData = encoder.encode(state.message);
 
-			// Map algorithm names to Web Crypto API names
 			const algoMap: { [key: string]: string } = {
 				"SHA-1": "SHA-1",
 				"SHA-256": "SHA-256",
@@ -45,7 +54,7 @@ export default function HMACGeneratorComponent() {
 			const key = await crypto.subtle.importKey(
 				"raw",
 				keyData,
-				{ name: "HMAC", hash: algoMap[algorithm] },
+				{ name: "HMAC", hash: algoMap[state.algorithm] },
 				false,
 				["sign"],
 			);
@@ -54,7 +63,7 @@ export default function HMACGeneratorComponent() {
 			const hashArray = Array.from(new Uint8Array(signature));
 			const hashHex = hashArray.map((b) => b.toString(16).padStart(2, "0")).join("");
 
-			setOutput(hashHex);
+			updateState({ output: hashHex });
 		} catch (error) {
 			console.error("Error generating HMAC:", error);
 			alert("Error generating HMAC. Please check your inputs.");
@@ -67,13 +76,7 @@ export default function HMACGeneratorComponent() {
 		const array = new Uint8Array(32);
 		crypto.getRandomValues(array);
 		const randomKey = Array.from(array, (byte) => byte.toString(16).padStart(2, "0")).join("");
-		setSecretKey(randomKey);
-	};
-
-	const clearAll = () => {
-		setMessage("");
-		setSecretKey("");
-		setOutput("");
+		updateState({ secretKey: randomKey });
 	};
 
 	return (
@@ -95,13 +98,13 @@ export default function HMACGeneratorComponent() {
 								<Textarea
 									id="message"
 									placeholder="Enter your message here..."
-									value={message}
-									onChange={(e) => setMessage(e.target.value)}
+									value={state.message}
+									onChange={(e) => updateState({ message: e.target.value })}
 									className="min-h-[120px]"
 								/>
 							</div>
 							<div className="text-sm text-gray-500 dark:text-gray-400">
-								Message length: {message.length} characters
+								Message length: {state.message.length} characters
 							</div>
 						</div>
 					</CardContent>
@@ -123,8 +126,8 @@ export default function HMACGeneratorComponent() {
 									id="secretKey"
 									type="password"
 									placeholder="Enter your secret key..."
-									value={secretKey}
-									onChange={(e) => setSecretKey(e.target.value)}
+									value={state.secretKey}
+									onChange={(e) => updateState({ secretKey: e.target.value })}
 									className="font-mono"
 								/>
 							</div>
@@ -141,7 +144,10 @@ export default function HMACGeneratorComponent() {
 						<CardDescription>Choose the hash algorithm</CardDescription>
 					</CardHeader>
 					<CardContent>
-						<Select value={algorithm} onValueChange={setAlgorithm}>
+						<Select
+							value={state.algorithm}
+							onValueChange={(val) => updateState({ algorithm: val })}
+						>
 							<SelectTrigger>
 								<SelectValue />
 							</SelectTrigger>
@@ -169,25 +175,25 @@ export default function HMACGeneratorComponent() {
 								<Button onClick={generateHMAC} disabled={isProcessing} className="flex-1">
 									{isProcessing ? "Generating..." : "Generate HMAC"}
 								</Button>
-								<Button onClick={clearAll} variant="outline">
+								<Button onClick={clearState} variant="outline">
 									Clear
 								</Button>
 							</div>
 
-							{output && (
+							{state.output && (
 								<div className="space-y-2">
 									<div className="flex items-center justify-between">
-										<Label>HMAC ({algorithm})</Label>
-										<CopyButton text={output} />
+										<Label>HMAC ({state.algorithm})</Label>
+										<CopyButton text={state.output} />
 									</div>
 									<Textarea
-										value={output}
+										value={state.output}
 										readOnly
 										className="font-mono text-sm break-all"
 										rows={3}
 									/>
 									<div className="text-sm text-gray-500 dark:text-gray-400">
-										Length: {output.length} characters
+										Length: {state.output.length} characters
 									</div>
 								</div>
 							)}

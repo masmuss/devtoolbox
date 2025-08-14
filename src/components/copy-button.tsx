@@ -17,7 +17,7 @@ export function CopyButton({
 	size = "sm",
 	variant = "ghost",
 	className,
-	label = "Copy to clipboard",
+	label,
 }: CopyButtonProps) {
 	const { copied, copyToClipboard } = useClipboard();
 

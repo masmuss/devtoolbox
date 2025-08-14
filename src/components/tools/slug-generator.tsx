@@ -13,11 +13,19 @@ import {
 	SelectValue,
 } from "@/components/ui/select";
 import { RefreshCw } from "lucide-react";
-import { useFlexibleToolState } from "@/lib/hooks/use-tool-state";
+import { useToolState } from "@/lib/hooks/use-tool-state";
 import { CopyButton } from "../copy-button";
 
+interface SlugGeneratorState {
+	input: string;
+	separator: string;
+	lowercase: boolean;
+	removeSpecialChars: boolean;
+	maxLength: string;
+}
+
 export default function SlugGeneratorComponent() {
-	const { state, updateState, clearState } = useFlexibleToolState({
+	const { state, updateState, clearState } = useToolState<SlugGeneratorState>({
 		input: "",
 		separator: "-",
 		lowercase: true,
