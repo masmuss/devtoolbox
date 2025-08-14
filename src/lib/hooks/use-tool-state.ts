@@ -8,9 +8,7 @@ export interface ToolState<T = Record<string, any>> {
 	setIsProcessing: (value: boolean) => void;
 }
 
-export function useToolState<T extends Record<string, any>>(
-	initialState: T,
-): ToolState<T> {
+export function useToolState<T extends Record<string, any>>(initialState: T): ToolState<T> {
 	const [state, setState] = useState<T>(initialState);
 	const [isProcessing, setIsProcessing] = useState<boolean>(false);
 

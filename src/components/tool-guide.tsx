@@ -8,7 +8,7 @@ interface ToolGuideProps {
 
 export function ToolGuide({ title, description, children }: ToolGuideProps) {
 	return (
-		<Card className="border-neutral-200 dark:border-neutral-800">
+		<Card className="mt-8 border-neutral-200 dark:border-neutral-800">
 			<CardHeader>
 				<CardTitle className="text-black dark:text-white">{title}</CardTitle>
 				{description && (
@@ -17,7 +17,7 @@ export function ToolGuide({ title, description, children }: ToolGuideProps) {
 					</CardDescription>
 				)}
 			</CardHeader>
-			<CardContent>{children}</CardContent>
+			<CardContent className="space-y-4 text-sm">{children}</CardContent>
 		</Card>
 	);
 }

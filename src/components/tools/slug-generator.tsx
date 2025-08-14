@@ -3,7 +3,6 @@ import { useToolState } from "@/lib/hooks/use-tool-state";
 import { SlugInput } from "../partials/slug/slug-input";
 import { SlugOptions } from "../partials/slug/slug-options";
 import { SlugOutput } from "../partials/slug/slug-output";
-import { SlugGuide } from "../partials/slug/slug-guide";
 
 interface SlugGeneratorState {
 	input: string;
@@ -76,8 +75,6 @@ export default function SlugGeneratorComponent() {
 			/>
 
 			<SlugOutput output={state.output} />
-
-			<SlugGuide />
 		</div>
 	);
 }

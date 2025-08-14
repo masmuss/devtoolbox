@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
@@ -11,43 +11,33 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "@/components/ui/select";
-import { Copy, Key, Shield, Clock, EyeOff, Eye } from "lucide-react";
+import { Key, Shield, Clock, EyeOff, Eye } from "lucide-react";
 import { useToolState } from "@/lib/hooks/use-tool-state";
 import { CopyButton } from "../copy-button";
+import { JWTHeaderSection } from "../partials/jwt/jwt-header-section";
+import { JWTPayloadSection } from "../partials/jwt/jwt-payload-section";
+import { JWTSecretSection } from "../partials/jwt/jwt-secret-section";
+import { JWTOutputSection } from "../partials/jwt/jwt-output-section";
+import { JWTInfo } from "../partials/jwt/jwt-info";
+
+interface JWTGeneratorState {
+	header: string;
+	payload: string;
+	secret: string;
+	algorithm: string;
+	output: string;
+	showSecret: boolean;
+}
 
 export default function JWTGeneratorComponent() {
-	const { input, output, setInput, setOutput, isProcessing, setIsProcessing } =
-		useToolState<string>("");
-
-	const [header, setHeader] = useState('{\n  "alg": "HS256",\n  "typ": "JWT"\n}');
-	const [payload, setPayload] = useState(
-		'{\n  "sub": "1234567890",\n  "name": "John Doe",\n  "iat": 1516239022\n}',
-	);
-	const [secret, setSecret] = useState("your-256-bit-secret");
-	const [algorithm, setAlgorithm] = useState("HS256");
-	const [showSecret, setShowSecret] = useState(false);
-
-	useEffect(() => {
-		try {
-			const headerObj = JSON.parse(header);
-			if (headerObj.alg !== algorithm) {
-				headerObj.alg = algorithm;
-				setHeader(JSON.stringify(headerObj, null, 2));
-			}
-		} catch {
-			// If header is not valid JSON, do not update
-		}
-	}, [algorithm]);
-
-	const handleHeaderChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-		setHeader(e.target.value);
-		try {
-			const headerObj = JSON.parse(e.target.value);
-			if (headerObj.alg && headerObj.alg !== algorithm) {
-				setAlgorithm(headerObj.alg);
-			}
-		} catch {}
-	};
+	const { state, updateState, isProcessing, setIsProcessing } = useToolState<JWTGeneratorState>({
+		header: '{\n  "alg": "HS256",\n  "typ": "JWT"\n}',
+		payload: '{\n  "sub": "1234567890",\n  "name": "John Doe",\n  "iat": 1516239022\n}',
+		secret: "your-256-bit-secret",
+		algorithm: "HS256",
+		output: "",
+		showSecret: false,
+	});
 
 	const base64urlEncode = (str: string) => {
 		return btoa(str).replace(/\+/g, "-").replace(/\//g, "_").replace(/=/g, "");
@@ -69,16 +59,16 @@ export default function JWTGeneratorComponent() {
 	const generateJWT = async () => {
 		try {
 			setIsProcessing(true);
-			const encodedHeader = base64urlEncode(header);
-			const encodedPayload = base64urlEncode(payload);
+			const encodedHeader = base64urlEncode(state.header);
+			const encodedPayload = base64urlEncode(state.payload);
 			const data = `${encodedHeader}.${encodedPayload}`;
 
-			if (algorithm === "HS256") {
-				const signature = await generateSignature(data, secret);
-				setOutput(`${data}.${signature}`);
+			if (state.algorithm === "HS256") {
+				const signature = await generateSignature(data, state.secret);
+				updateState({ output: `${data}.${signature}` });
 			} else {
 				const demoSignature = base64urlEncode("demo-signature-" + Date.now());
-				setOutput(`${data}.${demoSignature}`);
+				updateState({ output: `${data}.${demoSignature}` });
 			}
 		} catch (error) {
 			console.error("Error generating JWT:", error);
@@ -87,198 +77,35 @@ export default function JWTGeneratorComponent() {
 		}
 	};
 
-	const addCurrentTime = () => {
-		const currentPayload = JSON.parse(payload);
-		currentPayload.iat = Math.floor(Date.now() / 1000);
-		currentPayload.exp = Math.floor(Date.now() / 1000) + 3600;
-		setPayload(JSON.stringify(currentPayload, null, 2));
-	};
-
 	return (
 		<div className="grid gap-6 lg:grid-cols-2">
-			{/* Input Section */}
 			<div className="space-y-6">
-				<Card>
-					<CardHeader>
-						<CardTitle className="flex items-center gap-2">
-							<Shield className="h-5 w-5" />
-							Header
-						</CardTitle>
-						<CardDescription>JWT header containing algorithm and token type</CardDescription>
-					</CardHeader>
-					<CardContent>
-						<div className="space-y-4">
-							<div className="space-y-2">
-								<Label htmlFor="algorithm">Algorithm</Label>
-								<Select value={algorithm} onValueChange={setAlgorithm}>
-									<SelectTrigger>
-										<SelectValue />
-									</SelectTrigger>
-									<SelectContent>
-										<SelectItem value="HS256">HS256</SelectItem>
-										<SelectItem value="HS384">HS384</SelectItem>
-										<SelectItem value="HS512">HS512</SelectItem>
-										<SelectItem value="RS256">RS256</SelectItem>
-									</SelectContent>
-								</Select>
-							</div>
-							<div className="space-y-2">
-								<Label htmlFor="header">Header JSON</Label>
-								<Textarea
-									id="header"
-									value={header}
-									onChange={handleHeaderChange}
-									className="font-mono text-sm"
-									rows={4}
-								/>
-							</div>
-						</div>
-					</CardContent>
-				</Card>
+				<JWTHeaderSection
+					header={state.header}
+					algorithm={state.algorithm}
+					onHeaderChange={(header) => updateState({ header })}
+					onAlgorithmChange={(algorithm) => updateState({ algorithm })}
+				/>
 
-				<Card>
-					<CardHeader>
-						<CardTitle className="flex items-center gap-2">
-							<Clock className="h-5 w-5" />
-							Payload
-						</CardTitle>
-						<CardDescription>JWT payload containing claims and data</CardDescription>
-					</CardHeader>
-					<CardContent>
-						<div className="space-y-4">
-							<div className="flex gap-2">
-								<Button onClick={addCurrentTime} variant="outline" size="sm">
-									Add Current Time
-								</Button>
-							</div>
-							<div className="space-y-2">
-								<Label htmlFor="payload">Payload JSON</Label>
-								<Textarea
-									id="payload"
-									value={payload}
-									onChange={(e) => setPayload(e.target.value)}
-									className="font-mono text-sm"
-									rows={6}
-								/>
-							</div>
-						</div>
-					</CardContent>
-				</Card>
+				<JWTPayloadSection
+					payload={state.payload}
+					onPayloadChange={(payload) => updateState({ payload })}
+				/>
 
-				<Card>
-					<CardHeader>
-						<CardTitle className="flex items-center gap-2">
-							<Key className="h-5 w-5" />
-							Secret Key
-						</CardTitle>
-						<CardDescription>Secret key for HMAC algorithms</CardDescription>
-					</CardHeader>
-					<CardContent>
-						<div className="space-y-2">
-							<Label htmlFor="secret">Secret</Label>
-							<div className="relative">
-								<Input
-									id="secret"
-									type={showSecret ? "text" : "password"}
-									value={secret}
-									onChange={(e) => setSecret(e.target.value)}
-									className="pr-10 font-mono"
-								/>
-								<Button
-									type="button"
-									variant="ghost"
-									size="sm"
-									className="absolute top-0 right-0 h-full px-3 py-2 hover:bg-transparent"
-									onClick={() => setShowSecret(!showSecret)}
-								>
-									{showSecret ? (
-										<EyeOff className="h-4 w-4 text-neutral-500" />
-									) : (
-										<Eye className="h-4 w-4 text-neutral-500" />
-									)}
-								</Button>
-							</div>
-						</div>
-					</CardContent>
-				</Card>
+				<JWTSecretSection
+					secret={state.secret}
+					onSecretChange={(secret) => updateState({ secret })}
+				/>
 			</div>
 
-			{/* Output Section */}
 			<div className="space-y-6">
-				<Card>
-					<CardHeader>
-						<CardTitle>Generated JWT Token</CardTitle>
-						<CardDescription>Your encoded JSON Web Token</CardDescription>
-					</CardHeader>
-					<CardContent>
-						<div className="space-y-4">
-							<Button onClick={generateJWT} className="w-full" disabled={isProcessing}>
-								{isProcessing ? "Generating..." : "Generate JWT Token"}
-							</Button>
+				<JWTOutputSection
+					output={state.output}
+					isProcessing={isProcessing}
+					onGenerate={generateJWT}
+				/>
 
-							{output && (
-								<div className="space-y-2">
-									<div className="flex items-center justify-between">
-										<Label>JWT Token</Label>
-										<CopyButton text={output} />
-									</div>
-									<Textarea
-										value={output}
-										readOnly
-										className="font-mono text-sm break-all"
-										rows={6}
-									/>
-								</div>
-							)}
-						</div>
-					</CardContent>
-				</Card>
-
-				<Card>
-					<CardHeader>
-						<CardTitle>About JWT</CardTitle>
-					</CardHeader>
-					<CardContent className="space-y-3 text-sm text-neutral-600 dark:text-neutral-400">
-						<p>
-							<strong>JSON Web Tokens (JWT)</strong> are a compact, URL-safe means of representing
-							claims between two parties.
-						</p>
-						<div>
-							<strong>Structure:</strong>
-							<ul className="mt-1 list-inside list-disc space-y-1">
-								<li>
-									<strong>Header:</strong> Contains algorithm and token type
-								</li>
-								<li>
-									<strong>Payload:</strong> Contains claims and data
-								</li>
-								<li>
-									<strong>Signature:</strong> Verifies token integrity
-								</li>
-							</ul>
-						</div>
-						<div>
-							<strong>Common Claims:</strong>
-							<ul className="mt-1 list-inside list-disc space-y-1">
-								<li>
-									<code>iss</code> - Issuer
-								</li>
-								<li>
-									<code>sub</code> - Subject
-								</li>
-								<li>
-									<code>aud</code> - Audience
-								</li>
-								<li>
-									<code>exp</code> - Expiration time
-								</li>
-								<li>
-									<code>iat</code> - Issued at
-								</li>
-							</ul>
-						</div>
-					</CardContent>
-				</Card>
+				<JWTInfo />
 			</div>
 		</div>
 	);
