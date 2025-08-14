@@ -1,0 +1,16 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import PageHeader from "@/components/layouts/PageHeader.astro";
+import HMACGeneratorComponent from "@/components/tools/hmac-generator";
+---
+
+<BaseLayout title="HMAC Generator" description="Generate Hash-based Message Authentication Codes">
+	<main class="mx-auto max-w-5xl px-6 py-12 lg:px-8">
+		<PageHeader
+			title="HMAC Generator"
+			description="Generate Hash-based Message Authentication Codes"
+		/>
+
+		<HMACGeneratorComponent client:load />
+	</main>
+</BaseLayout>
