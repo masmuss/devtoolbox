@@ -1,0 +1,13 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import PageHeader from "@/components/layouts/PageHeader.astro";
+import JWTGeneratorComponent from "@/components/tools/jwt-generator";
+---
+
+<BaseLayout title="JWT Token Generator" description="Generate and customize JSON Web Tokens">
+	<main class="mx-auto max-w-5xl px-6 py-12 lg:px-8">
+		<PageHeader title="JWT Token Generator" description="Generate and customize JSON Web Tokens" />
+
+		<JWTGeneratorComponent client:load />
+	</main>
+</BaseLayout>
