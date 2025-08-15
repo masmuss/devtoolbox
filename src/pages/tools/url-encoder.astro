@@ -1,8 +1,8 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import UrlEncoderComponent from "@/components/tools/url-encoder";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import PageHeader from "@/components/layouts/PageHeader.astro";
+import { UrlInfo } from "@/components/partials/url/url-info";
 ---
 
 <BaseLayout
@@ -17,35 +17,6 @@ import PageHeader from "@/components/layouts/PageHeader.astro";
 
 		<UrlEncoderComponent client:load />
 
-		<Card className="border-neutral-200 dark:border-neutral-800">
-			<CardHeader>
-				<CardTitle className="text-black dark:text-white">URL Encoding Information</CardTitle>
-			</CardHeader>
-			<CardContent>
-				<div class="grid gap-6 md:grid-cols-2">
-					<div>
-						<h3 class="mb-3 font-semibold text-black dark:text-white">When to Use URL Encoding</h3>
-						<ul class="space-y-1 text-sm text-neutral-600 dark:text-neutral-400">
-							<li>• Query parameters with special characters</li>
-							<li>• Form data submission</li>
-							<li>• API requests with complex parameters</li>
-							<li>• Handling non-ASCII characters in URLs</li>
-							<li>• Spaces and reserved characters in URLs</li>
-						</ul>
-					</div>
-					<div>
-						<h3 class="mb-3 font-semibold text-black dark:text-white">Common Encoded Characters</h3>
-						<div class="space-y-1 font-mono text-sm text-neutral-600 dark:text-neutral-400">
-							<div>Space → %20</div>
-							<div>& → %26</div>
-							<div>= → %3D</div>
-							<div>? → %3F</div>
-							<div># → %23</div>
-							<div>+ → %2B</div>
-						</div>
-					</div>
-				</div>
-			</CardContent>
-		</Card>
+		<UrlInfo />
 	</main>
 </BaseLayout>
