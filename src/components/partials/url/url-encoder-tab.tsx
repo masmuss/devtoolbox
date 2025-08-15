@@ -46,9 +46,9 @@ export function URLEncoderTab({
 			>
 				<div className="space-y-4">
 					<div className="space-y-2">
-						<label className="text-sm font-medium text-black dark:text-white">
+						<Label className="text-sm font-medium text-black dark:text-white">
 							Input (Plain Text/URL)
-						</label>
+						</Label>
 						<Textarea
 							value={input}
 							onChange={(e) => onInputChange(e.target.value)}

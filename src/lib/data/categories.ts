@@ -10,11 +10,4 @@ export const categories = [
 	"Math",
 ];
 
-export const homepageCategories = [
-	"All",
-	"Security",
-	"Text",
-	"Encoding",
-	"Time",
-	"Utilities",
-];
+export const homepageCategories = ["All", "Security", "Text", "Encoding", "Time", "Utilities"];

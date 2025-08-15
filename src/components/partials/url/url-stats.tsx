@@ -14,8 +14,8 @@ export function URLStats({ result, type }: URLStatsProps) {
 
 	return (
 		<Card className="border-neutral-200 dark:border-neutral-800">
-			<CardContent className="pt-4">
-				<div className="grid grid-cols-2 gap-4 text-sm md:grid-cols-4">
+			<CardContent>
+				<div className="grid grid-cols-2 gap-4 align-baseline text-sm md:grid-cols-4">
 					<div className="text-center">
 						<div className="font-mono text-lg text-black dark:text-white">
 							{isEncoding

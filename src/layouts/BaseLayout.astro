@@ -8,6 +8,7 @@ interface Props {
 
 import "@/styles/global.css";
 import Footer from "@/components/layouts/Footer.astro";
+import ThemeProvider from "@/components/layouts/ThemeProvider.astro";
 
 const { title, description = "Collection of useful developer tools" } = Astro.props;
 ---
@@ -24,6 +25,7 @@ const { title, description = "Collection of useful developer tools" } = Astro.pr
 	<body
 		class="min-h-screen bg-gradient-to-br from-neutral-50 to-neutral-100 dark:from-neutral-900 dark:to-neutral-800"
 	>
+		<ThemeProvider />
 		<Header />
 
 		<main class="mx-auto">

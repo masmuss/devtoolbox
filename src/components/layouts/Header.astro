@@ -1,6 +1,7 @@
 ---
 import { Code } from "lucide-react";
 import { siteConfig } from "@/lib/data/constants";
+import ThemeToggle from "./ThemeToggle.astro";
 ---
 
 <header class="sticky top-0 z-50 border-b bg-white/80 backdrop-blur-sm dark:bg-neutral-900/80">
@@ -12,5 +13,6 @@ import { siteConfig } from "@/lib/data/constants";
 			<span class="text-xl font-bold text-neutral-900 dark:text-neutral-100">{siteConfig.name}</span
 			>
 		</a>
+		<ThemeToggle />
 	</div>
 </header>

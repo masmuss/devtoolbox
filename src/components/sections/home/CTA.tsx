@@ -4,7 +4,7 @@ import { siteConfig } from "@/lib/data/constants";
 
 export function CTA() {
 	return (
-		<section className="bg-neutral-900 py-16 dark:bg-neutral-950">
+		<section className="bg-neutral-800 py-16 dark:bg-neutral-900">
 			<div className="container mx-auto px-4 text-center">
 				<h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">
 					Ready to Boost Your Productivity?
@@ -20,7 +20,12 @@ export function CTA() {
 							<ArrowRight className="ml-2 h-5 w-5" />
 						</a>
 					</Button>
-					<Button variant="default" size="lg" asChild>
+					<Button
+						size="lg"
+						variant="outline"
+						className="border-0 bg-transparent text-neutral-300 hover:bg-transparent hover:text-neutral-100 dark:bg-transparent dark:hover:bg-transparent"
+						asChild
+					>
 						<a href={siteConfig.github} target="_blank" rel="noopener noreferrer">
 							Contribute on GitHub
 						</a>

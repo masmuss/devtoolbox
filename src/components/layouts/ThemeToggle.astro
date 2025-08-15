@@ -1,0 +1,42 @@
+---
+import { Moon, Sun } from "lucide-react";
+import { Button } from "../ui/button";
+---
+
+<theme-toggle class="ms-2 sm:ms-4">
+	<Button id="toggleDarkMode" size="icon" variant="ghost" aria-label="Toggle Dark Mode">
+		<Sun className="inline h-6 w-6 dark:hidden" />
+		<Moon className="hidden h-6 w-6 dark:inline dark:text-neutral-200" />
+	</Button>
+</theme-toggle>
+
+<script>
+	import { rootInDarkMode } from "@/lib/utils/dom-element";
+
+	class ThemeToggle extends HTMLElement {
+		constructor() {
+			super();
+			const button = this.querySelector<HTMLButtonElement>("button");
+
+			if (button) {
+				button.setAttribute("role", "switch");
+				button.setAttribute("aria-checked", String(rootInDarkMode()));
+
+				button.addEventListener("click", () => {
+					let themeChangeEvent = new CustomEvent("theme-change", {
+						detail: {
+							theme: rootInDarkMode() ? "light" : "dark",
+						},
+					});
+					document.dispatchEvent(themeChangeEvent);
+
+					button.setAttribute("aria-checked", String(rootInDarkMode()));
+				});
+			} else {
+				console.warn("Theme Toggle: No button found");
+			}
+		}
+	}
+
+	customElements.define("theme-toggle", ThemeToggle);
+</script>

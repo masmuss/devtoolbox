@@ -18,13 +18,13 @@ export function Hero() {
 					{siteConfig.description}
 				</p>
 				<div className="flex flex-col justify-center gap-4 sm:flex-row">
-					<Button size="lg" asChild>
+					<Button size="lg" variant="default" asChild>
 						<a href="/tools">
 							Start Using Tools Free
-							<ArrowRight className="ml-2 h-5 w-5" />
+							<ArrowRight />
 						</a>
 					</Button>
-					<Button variant="outline" size="lg" asChild>
+					<Button variant="ghost" size="lg" asChild>
 						<a href={siteConfig.github} target="_blank" rel="noopener noreferrer">
 							View on GitHub
 						</a>

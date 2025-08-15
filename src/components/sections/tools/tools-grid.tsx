@@ -17,11 +17,6 @@ export function ToolsGrid() {
 				{allTools.map((tool) => (
 					<ToolCard key={tool.title} tool={tool} />
 				))}
-				<Card className="group h-full cursor-pointer border-neutral-200 bg-white opacity-60 transition-all duration-200 hover:border-neutral-400 hover:shadow-lg dark:border-neutral-700 dark:bg-neutral-800 dark:hover:border-neutral-500">
-					<CardContent className="flex flex-1 flex-col justify-between pt-0">
-						Coming Soon...
-					</CardContent>
-				</Card>
 			</div>
 
 			{/* Load More Button */}
@@ -29,11 +24,7 @@ export function ToolsGrid() {
 				<p className="mb-4 text-neutral-600 dark:text-neutral-300">
 					Showing all {allTools.length} tools
 				</p>
-				<Button
-					variant="outline"
-					size="lg"
-					className="border-neutral-300 bg-transparent hover:bg-neutral-50 dark:border-neutral-600 dark:hover:bg-neutral-800"
-				>
+				<Button variant="outline" size="lg">
 					Request a New Tool
 					<ArrowRight className="ml-2 h-5 w-5" />
 				</Button>

@@ -30,7 +30,7 @@ export function Tools() {
 			<div className="mt-12 text-center">
 				<Button variant="outline" size="lg" asChild>
 					<a href="/tools">
-						View All {siteConfig.totalTools}+ Tools
+						View All Tools
 						<ArrowRight className="ml-2 h-5 w-5" />
 					</a>
 				</Button>

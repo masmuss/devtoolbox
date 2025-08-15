@@ -31,14 +31,7 @@ export function CategoryFilter({
 					onClick={() => onCategoryChange?.(category)}
 				>
 					{category}
-					{category === "All" && showCount && (
-						<Badge
-							variant="secondary"
-							className="ml-2 bg-neutral-100 text-xs text-neutral-800 dark:bg-neutral-700 dark:text-neutral-200"
-						>
-							{totalCount}
-						</Badge>
-					)}
+					{category === "All" && showCount && <Badge variant="secondary">{totalCount}</Badge>}
 				</Button>
 			))}
 		</div>
