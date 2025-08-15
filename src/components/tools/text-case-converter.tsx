@@ -52,10 +52,5 @@ export default function TextCaseConverterComponent() {
 				<CaseResults results={state.results as unknown as Record<string, string>} />
 			</div>
 		</div>
-
-		// Guide Section
-		// <div className="mt-8">
-		// 	<ConversionGuide />
-		// </div>
 	);
 }
