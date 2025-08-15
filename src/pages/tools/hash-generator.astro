@@ -1,7 +1,6 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import HashGeneratorComponent from "@/components/tools/hash-generator.tsx";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import PageHeader from "@/components/layouts/PageHeader.astro";
 ---
 
@@ -16,48 +15,5 @@ import PageHeader from "@/components/layouts/PageHeader.astro";
 		/>
 
 		<HashGeneratorComponent client:load />
-
-		<Card className="mt-8 border-neutral-200 dark:border-neutral-800">
-			<CardHeader>
-				<CardTitle className="text-black dark:text-white">Hash Algorithm Information</CardTitle>
-			</CardHeader>
-			<CardContent>
-				<div class="grid gap-4 md:grid-cols-2">
-					<div>
-						<h3 class="mb-2 font-semibold text-black dark:text-white">Secure Algorithms</h3>
-						<ul class="space-y-1 text-sm text-neutral-600 dark:text-neutral-400">
-							<li>
-								• <strong>SHA-256:</strong> Most commonly used, very secure
-							</li>
-							<li>
-								• <strong>SHA-384:</strong> Higher security, larger output
-							</li>
-							<li>
-								• <strong>SHA-512:</strong> Highest security, largest output
-							</li>
-						</ul>
-					</div>
-					<div>
-						<h3 class="mb-2 font-semibold text-black dark:text-white">Legacy Algorithms</h3>
-						<ul class="space-y-1 text-sm text-neutral-600 dark:text-neutral-400">
-							<li>
-								• <strong>MD5:</strong> Fast but not secure for passwords
-							</li>
-							<li>
-								• <strong>SHA-1:</strong> Deprecated for security applications
-							</li>
-						</ul>
-					</div>
-				</div>
-				<div class="mt-4 rounded-lg bg-neutral-50 p-4 dark:bg-neutral-900">
-					<p class="text-sm text-neutral-600 dark:text-neutral-400">
-						<strong>Note:</strong> For password hashing, use specialized algorithms like
-						<code class="font-semibold">bcrypt</code>,
-						<code class="font-semibold">scrypt</code>, or <code class="font-semibold">Argon2</code> instead
-						of these general-purpose hash functions.
-					</p>
-				</div>
-			</CardContent>
-		</Card>
 	</main>
 </BaseLayout>
