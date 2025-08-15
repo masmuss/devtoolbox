@@ -1,10 +1,9 @@
 import { RefreshCw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Progress } from "@/components/ui/progress";
 import { CopyButton } from "@/components/copy-button";
-import { getPasswordStrength } from "@/lib/utils/password-generator";
 import ToolSection from "@/components/tool-section.tsx";
+import { PasswordSecurityIndicator } from "@/components/partials/password/password-security-indicator.tsx";
 
 interface PasswordOutputProps {
 	password: string;
@@ -12,7 +11,6 @@ interface PasswordOutputProps {
 }
 
 export function PasswordOutput({ password, onGenerate }: PasswordOutputProps) {
-	const strength = getPasswordStrength(password);
 	const isValidPassword = password && password !== "Please select at least one character type";
 
 	return (
@@ -42,15 +40,7 @@ export function PasswordOutput({ password, onGenerate }: PasswordOutputProps) {
 					</div>
 				</div>
 
-				{isValidPassword && (
-					<div className="space-y-2">
-						<div className="flex items-center justify-between text-sm">
-							<span className="text-neutral-600 dark:text-neutral-400">Strength:</span>
-							<span className={strength.color}>{strength.label}</span>
-						</div>
-						<Progress value={(strength.score / 6) * 100} className="h-2" />
-					</div>
-				)}
+				<PasswordSecurityIndicator password={password} />
 
 				<Button
 					onClick={onGenerate}
