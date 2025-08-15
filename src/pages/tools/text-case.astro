@@ -1,0 +1,25 @@
+---
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import PageHeader from "@/components/layouts/PageHeader.astro";
+import TextCaseConverterComponent from "@/components/tools/text-case-converter";
+import { ConversionGuide } from "@/components/partials/text-case/conversion-guide";
+---
+
+<BaseLayout
+	title="Password Generator"
+	description="Generate secure passwords with customizable length and character options"
+>
+	<main class="mx-auto max-w-7xl px-6 py-12 lg:px-8">
+		<PageHeader
+			title="Password Generator"
+			description="Generate secure, random passwords with customizable options for maximum security."
+		/>
+
+		<TextCaseConverterComponent client:load />
+
+		<div class="mt-8">
+			<ConversionGuide />
+		</div>
+	</main>
+</BaseLayout>
