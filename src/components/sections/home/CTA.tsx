@@ -2,7 +2,7 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button.tsx";
 import { siteConfig } from "@/lib/data/constants";
 
-export default function CTA() {
+export function CTA() {
 	return (
 		<section className="bg-neutral-900 py-16 dark:bg-neutral-950">
 			<div className="container mx-auto px-4 text-center">

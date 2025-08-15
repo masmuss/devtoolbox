@@ -1,7 +1,7 @@
 import { Code, Shield, Zap } from "lucide-react";
 import { siteConfig } from "@/lib/data/constants";
 
-export default function Features() {
+export function Features() {
 	return (
 		<section className="bg-white py-16 dark:bg-neutral-800">
 			<div className="container mx-auto px-4">

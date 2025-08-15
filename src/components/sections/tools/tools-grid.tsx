@@ -1,12 +1,12 @@
-import CategoryFilter from "@/components/category-filter";
-import ToolCard from "@/components/tool-card";
+import { CategoryFilter } from "@/components/category-filter";
+import { ToolCard } from "@/components/tool-card";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { categories } from "@/lib/data/categories";
 import { allTools } from "@/lib/data/tools";
 import { ArrowRight } from "lucide-react";
 
-export default function ToolsGrid() {
+export function ToolsGrid() {
 	return (
 		<section className="container mx-auto px-4 pb-16">
 			{/* Category Filter */}

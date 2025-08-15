@@ -13,7 +13,7 @@ interface KeyDisplayCardProps {
 	onTogglePrivateKey?: () => void;
 }
 
-export default function KeyDisplayCard({
+export function KeyDisplayCard({
 	type,
 	value,
 	keySize,

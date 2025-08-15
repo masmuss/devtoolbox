@@ -8,7 +8,7 @@ interface ToolCardProps {
 	showComingSoon?: boolean;
 }
 
-export default function ToolCard({ tool, showComingSoon = false }: ToolCardProps) {
+export function ToolCard({ tool, showComingSoon = false }: ToolCardProps) {
 	const IconComponent = tool.icon;
 	const isComingSoon = !tool.href && showComingSoon;
 

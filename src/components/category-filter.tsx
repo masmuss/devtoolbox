@@ -9,7 +9,7 @@ interface CategoryFilterProps {
 	totalCount?: number;
 }
 
-export default function CategoryFilter({
+export function CategoryFilter({
 	categories,
 	activeCategory = "All",
 	onCategoryChange,

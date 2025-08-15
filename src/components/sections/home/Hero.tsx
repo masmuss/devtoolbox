@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/badge.tsx";
 import { Button } from "@/components/ui/button.tsx";
 import { siteConfig } from "@/lib/data/constants";
 
-export default function Hero() {
+export function Hero() {
 	return (
 		<section className="container mx-auto px-4 py-16 text-center md:py-24">
 			<div className="mx-auto max-w-4xl">

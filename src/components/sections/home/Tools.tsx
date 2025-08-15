@@ -2,11 +2,11 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button.tsx";
 import { siteConfig } from "@/lib/data/constants";
 import { popularTools } from "@/lib/data/tools";
-import CategoryFilter from "@/components/category-filter";
-import ToolCard from "@/components/tool-card";
+import { CategoryFilter } from "@/components/category-filter";
+import { ToolCard } from "@/components/tool-card";
 import { categories } from "@/lib/data/categories";
 
-export default function Tools() {
+export function Tools() {
 	return (
 		<section className="container mx-auto px-4 py-16">
 			<div className="mb-12 text-center">
