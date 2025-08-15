@@ -15,7 +15,7 @@ export function URLExamples({ onSelectExample }: URLExamplesProps) {
 			<div className="space-y-4">
 				{urlExamples.map((category) => (
 					<div key={category.category} className="space-y-2">
-						<h4 className="text-sm font-medium text-gray-700 dark:text-gray-300">
+						<h4 className="text-sm font-medium text-neutral-700 dark:text-neutral-300">
 							{category.category}
 						</h4>
 						<div className="grid gap-2">
@@ -25,7 +25,7 @@ export function URLExamples({ onSelectExample }: URLExamplesProps) {
 									variant="outline"
 									size="sm"
 									onClick={() => onSelectExample(example)}
-									className="h-auto justify-start border-gray-200 p-3 text-left hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-900"
+									className="h-auto justify-start border-neutral-200 p-3 text-left hover:bg-neutral-50 dark:border-neutral-800 dark:hover:bg-neutral-900"
 								>
 									<span className="truncate font-mono text-xs">{example}</span>
 								</Button>

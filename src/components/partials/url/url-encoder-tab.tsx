@@ -53,21 +53,21 @@ export function URLEncoderTab({
 							value={input}
 							onChange={(e) => onInputChange(e.target.value)}
 							placeholder="Enter text or URL to encode..."
-							className="min-h-24 border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-gray-900"
+							className="min-h-24 border-neutral-200 bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-900"
 						/>
 					</div>
 
 					<div className="flex flex-wrap gap-2">
 						<Button
 							onClick={onEncode}
-							className="bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200"
+							className="bg-black text-white hover:bg-neutral-800 dark:bg-white dark:text-black dark:hover:bg-neutral-200"
 						>
 							Encode URL
 						</Button>
 						<Button
 							onClick={onClear}
 							variant="outline"
-							className="border-gray-200 bg-transparent hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-900"
+							className="border-neutral-200 bg-transparent hover:bg-neutral-50 dark:border-neutral-800 dark:hover:bg-neutral-900"
 						>
 							<RefreshCw className="mr-2 h-4 w-4" />
 							Clear
@@ -75,7 +75,7 @@ export function URLEncoderTab({
 						<Button
 							onClick={onSwap}
 							variant="outline"
-							className="border-gray-200 bg-transparent hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-900"
+							className="border-neutral-200 bg-transparent hover:bg-neutral-50 dark:border-neutral-800 dark:hover:bg-neutral-900"
 						>
 							<ArrowUpDown className="mr-2 h-4 w-4" />
 							Swap with Decode
@@ -91,7 +91,7 @@ export function URLEncoderTab({
 								value={output}
 								readOnly
 								placeholder="Encoded URL will appear here..."
-								className="min-h-24 resize-none border-gray-200 bg-gray-50 font-mono text-sm dark:border-gray-800 dark:bg-gray-900"
+								className="min-h-24 resize-none border-neutral-200 bg-neutral-50 font-mono text-sm dark:border-neutral-800 dark:bg-neutral-900"
 							/>
 							{output && !output.startsWith("Error:") && (
 								<CopyButton text={output} className="absolute top-2 right-2 h-8 w-8 p-0" />

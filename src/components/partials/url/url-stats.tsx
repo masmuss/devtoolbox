@@ -13,7 +13,7 @@ export function URLStats({ result, type }: URLStatsProps) {
 	const stats = result.stats as URLEncodingResult["stats"] | URLDecodingResult["stats"];
 
 	return (
-		<Card className="border-gray-200 dark:border-gray-800">
+		<Card className="border-neutral-200 dark:border-neutral-800">
 			<CardContent className="pt-4">
 				<div className="grid grid-cols-2 gap-4 text-sm md:grid-cols-4">
 					<div className="text-center">
@@ -22,7 +22,7 @@ export function URLStats({ result, type }: URLStatsProps) {
 								? (stats as URLEncodingResult["stats"]).originalLength
 								: (stats as URLDecodingResult["stats"]).decodedLength}
 						</div>
-						<div className="text-gray-600 dark:text-gray-400">
+						<div className="text-neutral-600 dark:text-neutral-400">
 							{isEncoding ? "Original" : "Decoded"} Length
 						</div>
 					</div>
@@ -33,7 +33,7 @@ export function URLStats({ result, type }: URLStatsProps) {
 								? (stats as URLEncodingResult["stats"]).encodedLength
 								: (stats as URLDecodingResult["stats"]).originalLength}
 						</div>
-						<div className="text-gray-600 dark:text-gray-400">
+						<div className="text-neutral-600 dark:text-neutral-400">
 							{isEncoding ? "Encoded" : "Original"} Length
 						</div>
 					</div>
@@ -44,7 +44,7 @@ export function URLStats({ result, type }: URLStatsProps) {
 								? (stats as URLEncodingResult["stats"]).charactersEncoded
 								: (stats as URLDecodingResult["stats"]).charactersDecoded}
 						</div>
-						<div className="text-gray-600 dark:text-gray-400">
+						<div className="text-neutral-600 dark:text-neutral-400">
 							Characters {isEncoding ? "Encoded" : "Decoded"}
 						</div>
 					</div>
@@ -54,7 +54,7 @@ export function URLStats({ result, type }: URLStatsProps) {
 							<div className="font-mono text-lg text-black dark:text-white">
 								{(stats as URLEncodingResult["stats"]).encodingRatio.toFixed(2)}x
 							</div>
-							<div className="text-gray-600 dark:text-gray-400">Size Ratio</div>
+							<div className="text-neutral-600 dark:text-neutral-400">Size Ratio</div>
 						</div>
 					)}
 				</div>

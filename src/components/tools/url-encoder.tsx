@@ -57,7 +57,7 @@ export default function URLEncoderComponent() {
 	return (
 		<Tabs defaultValue="encode" className="space-y-8">
 			<div className="flex justify-center">
-				<TabsList className="grid w-full max-w-md grid-cols-2 bg-gray-100 dark:bg-gray-900">
+				<TabsList className="grid w-full max-w-md grid-cols-2 bg-neutral-100 dark:bg-neutral-900">
 					<TabsTrigger
 						value="encode"
 						className="data-[state=active]:bg-white dark:data-[state=active]:bg-black"
