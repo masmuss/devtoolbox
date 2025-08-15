@@ -144,39 +144,6 @@ export const allTools: Tool[] = [
 		href: "/tools/xml-formatter",
 	},
 
-	// Design Tools
-	{
-		title: "Color Palette Generator",
-		description: "Create beautiful color schemes and palettes for your design projects",
-		icon: Palette,
-		category: "Design",
-		href: "/tools/color-palette",
-	},
-	{
-		title: "CSS Gradient Generator",
-		description: "Create stunning CSS gradients with live preview and code export",
-		icon: Palette,
-		category: "Design",
-	},
-	{
-		title: "Box Shadow Generator",
-		description: "Generate CSS box-shadow effects with visual editor and live preview",
-		icon: Palette,
-		category: "Design",
-	},
-	{
-		title: "Image Placeholder Generator",
-		description: "Generate placeholder images with custom dimensions and colors",
-		icon: ImageIcon,
-		category: "Design",
-	},
-	{
-		title: "Favicon Generator",
-		description: "Create favicons in multiple sizes from uploaded images",
-		icon: ImageIcon,
-		category: "Design",
-	},
-
 	// Time Tools
 	{
 		title: "Unix Timestamp Converter",
