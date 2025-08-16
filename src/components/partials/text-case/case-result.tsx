@@ -109,13 +109,13 @@ export function CaseResults({ results }: CaseResultsProps) {
 						>
 							{category}
 						</span>
-						<div className="h-px flex-1 bg-neutral-200 dark:bg-neutral-800" />
+						<div className="h-px flex-1 bg-neutral-200 dark:bg-neutral-600" />
 					</div>
 
 					<div className="grid gap-3">
 						{cases.map((caseType) => (
 							<Card key={caseType.key} className="border-neutral-200 dark:border-neutral-800">
-								<CardHeader className="pb-2">
+								<CardHeader>
 									<div className="flex items-center justify-between">
 										<div>
 											<CardTitle className="font-mono text-base">{caseType.name}</CardTitle>
