@@ -2,7 +2,44 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-## [0.0.4](https://github.com/masmuss/devtools/compare/v0.0.3...v0.0.4) (2025-08-16)
+## [0.0.7](https://github.com/masmuss/devtools/compare/v0.0.3...v0.0.7) (2025-08-16)
+
+
+### Bug Fixes
+
+* error import at home component ([2b57381](https://github.com/masmuss/devtools/commit/2b57381c2dd51663a2d132069b106ef4da6b4f3e))
+
+## [0.0.6](https://github.com/masmuss/devtools/compare/v0.0.5...v0.0.6) (2025-08-16)
+
+## [0.0.5](https://github.com/masmuss/devtools/compare/v0.0.2...v0.0.5) (2025-08-16)
+
+
+### Features
+
+* add security analysis indicator for password generator ([2bf431d](https://github.com/masmuss/devtools/commit/2bf431d09f42a9f07651e961f26e0f2f81d66b2b))
+* adds text case converter tool with multiple format support ([499caef](https://github.com/masmuss/devtools/commit/499caef2d9e9f159745f23d707c6cf279c19930b))
+* implements theme toggle functionality and cleans up UI styling ([eeb5d71](https://github.com/masmuss/devtools/commit/eeb5d717ca03b7476c5832d6d943f8f11756de98))
+
+
+### Bug Fixes
+
+* error import at home component ([6d2371f](https://github.com/masmuss/devtools/commit/6d2371fd6175e740f59c3a003358f071fba60efd))
+* removes "DevTools" suffix from page titles ([81646ba](https://github.com/masmuss/devtools/commit/81646bafb7a815eb71648eab340438b413505958))
+
+## [0.0.4](https://github.com/masmuss/devtools/compare/v0.0.2...v0.0.4) (2025-08-16)
+
+
+### Features
+
+* add security analysis indicator for password generator ([2bf431d](https://github.com/masmuss/devtools/commit/2bf431d09f42a9f07651e961f26e0f2f81d66b2b))
+* adds text case converter tool with multiple format support ([499caef](https://github.com/masmuss/devtools/commit/499caef2d9e9f159745f23d707c6cf279c19930b))
+* implements theme toggle functionality and cleans up UI styling ([eeb5d71](https://github.com/masmuss/devtools/commit/eeb5d717ca03b7476c5832d6d943f8f11756de98))
+
+
+### Bug Fixes
+
+* error import at home component ([6d2371f](https://github.com/masmuss/devtools/commit/6d2371fd6175e740f59c3a003358f071fba60efd))
+* removes "DevTools" suffix from page titles ([81646ba](https://github.com/masmuss/devtools/commit/81646bafb7a815eb71648eab340438b413505958))
 
 ## [0.0.3](https://github.com/masmuss/devtools/compare/v0.0.2...v0.0.3) (2025-08-16)
 
