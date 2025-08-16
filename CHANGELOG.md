@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.0.8](https://github.com/masmuss/devtoolbox/compare/v0.0.7...v0.0.8) (2025-08-16)
+
+
+### Features
+
+* add word counter tool with text analysis and readability metrics ([8b5d0a1](https://github.com/masmuss/devtoolbox/commit/8b5d0a1d1a1902e34cd2e253146a7879c2f91537))
+
+
+### Bug Fixes
+
+* update page title and site configuration URLs ([eefe8b5](https://github.com/masmuss/devtoolbox/commit/eefe8b54b7bbf99465ba8d6e22e15ea2da9312a9))
+* update page title and site configuration URLs ([2f73e56](https://github.com/masmuss/devtoolbox/commit/2f73e56e6f03787d54b740bb3dde64538fe19a80))
+
 ## [0.0.7](https://github.com/masmuss/devtools/compare/v0.0.3...v0.0.7) (2025-08-16)
 
 ### Bug Fixes
