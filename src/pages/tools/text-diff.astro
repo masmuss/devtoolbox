@@ -1,0 +1,19 @@
+---
+import PageHeader from "@/components/layouts/PageHeader.astro";
+import TextDiffCheckerComponent from "@/components/tools/text-diff-checker";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+	title="Text Diff Checker"
+	description="Compare two texts and visualize differences with line-by-line and word-by-word analysis"
+>
+	<main class="mx-auto max-w-5xl px-6 py-12 lg:px-8">
+		<PageHeader
+			title="Text Diff Checker"
+			description="Compare two texts and visualize differences with line-by-line and word-by-word analysis"
+		/>
+
+		<TextDiffCheckerComponent client:load />
+	</main>
+</BaseLayout>
