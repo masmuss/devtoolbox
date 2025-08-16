@@ -11,6 +11,8 @@ import Footer from "@/components/layouts/Footer.astro";
 import ThemeProvider from "@/components/layouts/ThemeProvider.astro";
 
 const { title, description = "Collection of useful developer tools" } = Astro.props;
+
+const pageTitle = title ? `${title} - DevToolbox` : "DevToolbox";
 ---
 
 <!doctype html>
@@ -18,7 +20,7 @@ const { title, description = "Collection of useful developer tools" } = Astro.pr
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>{title}</title>
+		<title>{pageTitle}</title>
 		<meta name="description" content={description} />
 		<link rel="icon" type="image/x-icon" href="/favicon.svg" />
 	</head>

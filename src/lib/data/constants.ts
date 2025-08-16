@@ -1,8 +1,8 @@
 export const siteConfig = {
 	name: "DevToolbox",
 	description: "Free & Open Source developer tools. No sign-ups, no limits, no tracking.",
-	url: "https://devtoolbox.dev",
-	github: "https://github.com",
+	url: "https://devtoolbox.khoirul.site",
+	github: "https://github.com/masmuss/devtools",
 	totalTools: 40,
 };
 
