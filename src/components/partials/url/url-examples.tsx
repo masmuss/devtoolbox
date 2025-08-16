@@ -1,5 +1,3 @@
-"use client";
-
 import ToolSection from "@/components/tool-section";
 import { Button } from "@/components/ui/button";
 import { urlExamples } from "@/lib/utils/url-encoder";

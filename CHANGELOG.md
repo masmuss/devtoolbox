@@ -2,58 +2,69 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-## [0.0.7](https://github.com/masmuss/devtools/compare/v0.0.3...v0.0.7) (2025-08-16)
+## [0.0.9](https://github.com/masmuss/devtoolbox/compare/v0.0.8...v0.0.9) (2025-08-16)
 
+
+### Features
+
+* implement text diff checker tool with line and word analysis ([1cde75e](https://github.com/masmuss/devtoolbox/commit/1cde75e2a9fffd511eec930a4cdb451834d48ad9))
+
+## [0.0.8](https://github.com/masmuss/devtoolbox/compare/v0.0.7...v0.0.8) (2025-08-16)
+
+### Features
+
+- add word counter tool with text analysis and readability metrics ([8b5d0a1](https://github.com/masmuss/devtoolbox/commit/8b5d0a1d1a1902e34cd2e253146a7879c2f91537))
 
 ### Bug Fixes
 
-* error import at home component ([2b57381](https://github.com/masmuss/devtools/commit/2b57381c2dd51663a2d132069b106ef4da6b4f3e))
+- update page title and site configuration URLs ([eefe8b5](https://github.com/masmuss/devtoolbox/commit/eefe8b54b7bbf99465ba8d6e22e15ea2da9312a9))
+- update page title and site configuration URLs ([2f73e56](https://github.com/masmuss/devtoolbox/commit/2f73e56e6f03787d54b740bb3dde64538fe19a80))
+
+## [0.0.7](https://github.com/masmuss/devtools/compare/v0.0.3...v0.0.7) (2025-08-16)
+
+### Bug Fixes
+
+- error import at home component ([2b57381](https://github.com/masmuss/devtools/commit/2b57381c2dd51663a2d132069b106ef4da6b4f3e))
 
 ## [0.0.6](https://github.com/masmuss/devtools/compare/v0.0.5...v0.0.6) (2025-08-16)
 
 ## [0.0.5](https://github.com/masmuss/devtools/compare/v0.0.2...v0.0.5) (2025-08-16)
 
-
 ### Features
 
-* add security analysis indicator for password generator ([2bf431d](https://github.com/masmuss/devtools/commit/2bf431d09f42a9f07651e961f26e0f2f81d66b2b))
-* adds text case converter tool with multiple format support ([499caef](https://github.com/masmuss/devtools/commit/499caef2d9e9f159745f23d707c6cf279c19930b))
-* implements theme toggle functionality and cleans up UI styling ([eeb5d71](https://github.com/masmuss/devtools/commit/eeb5d717ca03b7476c5832d6d943f8f11756de98))
-
+- add security analysis indicator for password generator ([2bf431d](https://github.com/masmuss/devtools/commit/2bf431d09f42a9f07651e961f26e0f2f81d66b2b))
+- adds text case converter tool with multiple format support ([499caef](https://github.com/masmuss/devtools/commit/499caef2d9e9f159745f23d707c6cf279c19930b))
+- implements theme toggle functionality and cleans up UI styling ([eeb5d71](https://github.com/masmuss/devtools/commit/eeb5d717ca03b7476c5832d6d943f8f11756de98))
 
 ### Bug Fixes
 
-* error import at home component ([6d2371f](https://github.com/masmuss/devtools/commit/6d2371fd6175e740f59c3a003358f071fba60efd))
-* removes "DevTools" suffix from page titles ([81646ba](https://github.com/masmuss/devtools/commit/81646bafb7a815eb71648eab340438b413505958))
+- error import at home component ([6d2371f](https://github.com/masmuss/devtools/commit/6d2371fd6175e740f59c3a003358f071fba60efd))
+- removes "DevTools" suffix from page titles ([81646ba](https://github.com/masmuss/devtools/commit/81646bafb7a815eb71648eab340438b413505958))
 
 ## [0.0.4](https://github.com/masmuss/devtools/compare/v0.0.2...v0.0.4) (2025-08-16)
 
-
 ### Features
 
-* add security analysis indicator for password generator ([2bf431d](https://github.com/masmuss/devtools/commit/2bf431d09f42a9f07651e961f26e0f2f81d66b2b))
-* adds text case converter tool with multiple format support ([499caef](https://github.com/masmuss/devtools/commit/499caef2d9e9f159745f23d707c6cf279c19930b))
-* implements theme toggle functionality and cleans up UI styling ([eeb5d71](https://github.com/masmuss/devtools/commit/eeb5d717ca03b7476c5832d6d943f8f11756de98))
-
+- add security analysis indicator for password generator ([2bf431d](https://github.com/masmuss/devtools/commit/2bf431d09f42a9f07651e961f26e0f2f81d66b2b))
+- adds text case converter tool with multiple format support ([499caef](https://github.com/masmuss/devtools/commit/499caef2d9e9f159745f23d707c6cf279c19930b))
+- implements theme toggle functionality and cleans up UI styling ([eeb5d71](https://github.com/masmuss/devtools/commit/eeb5d717ca03b7476c5832d6d943f8f11756de98))
 
 ### Bug Fixes
 
-* error import at home component ([6d2371f](https://github.com/masmuss/devtools/commit/6d2371fd6175e740f59c3a003358f071fba60efd))
-* removes "DevTools" suffix from page titles ([81646ba](https://github.com/masmuss/devtools/commit/81646bafb7a815eb71648eab340438b413505958))
+- error import at home component ([6d2371f](https://github.com/masmuss/devtools/commit/6d2371fd6175e740f59c3a003358f071fba60efd))
+- removes "DevTools" suffix from page titles ([81646ba](https://github.com/masmuss/devtools/commit/81646bafb7a815eb71648eab340438b413505958))
 
 ## [0.0.3](https://github.com/masmuss/devtools/compare/v0.0.2...v0.0.3) (2025-08-16)
 
-
 ### Features
 
-* add security analysis indicator for password generator ([2bf431d](https://github.com/masmuss/devtools/commit/2bf431d09f42a9f07651e961f26e0f2f81d66b2b))
-* adds text case converter tool with multiple format support ([499caef](https://github.com/masmuss/devtools/commit/499caef2d9e9f159745f23d707c6cf279c19930b))
-* implements theme toggle functionality and cleans up UI styling ([eeb5d71](https://github.com/masmuss/devtools/commit/eeb5d717ca03b7476c5832d6d943f8f11756de98))
-
+- add security analysis indicator for password generator ([2bf431d](https://github.com/masmuss/devtools/commit/2bf431d09f42a9f07651e961f26e0f2f81d66b2b))
+- adds text case converter tool with multiple format support ([499caef](https://github.com/masmuss/devtools/commit/499caef2d9e9f159745f23d707c6cf279c19930b))
+- implements theme toggle functionality and cleans up UI styling ([eeb5d71](https://github.com/masmuss/devtools/commit/eeb5d717ca03b7476c5832d6d943f8f11756de98))
 
 ### Bug Fixes
 
-* removes "DevTools" suffix from page titles ([81646ba](https://github.com/masmuss/devtools/commit/81646bafb7a815eb71648eab340438b413505958))
+- removes "DevTools" suffix from page titles ([81646ba](https://github.com/masmuss/devtools/commit/81646bafb7a815eb71648eab340438b413505958))
 
 ## 0.0.2 (2025-08-14)
 
