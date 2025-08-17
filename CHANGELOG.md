@@ -6,17 +6,15 @@ All notable changes to this project will be documented in this file. See [commit
 
 ## [0.0.11](https://github.com/masmuss/devtoolbox/compare/v0.0.10...v0.0.11) (2025-08-17)
 
-
 ### Features
 
-* add Base64 encoding/decoding tools with file conversion support ([0f56c02](https://github.com/masmuss/devtoolbox/commit/0f56c022436fcfb43291b169d3ac58c9d3abb5b5))
+- add Base64 encoding/decoding tools with file conversion support ([0f56c02](https://github.com/masmuss/devtoolbox/commit/0f56c022436fcfb43291b169d3ac58c9d3abb5b5))
 
 ## [0.0.10](https://github.com/masmuss/devtoolbox/compare/v0.0.9...v0.0.10) (2025-08-17)
 
-
 ### Features
 
-* enhance ToolsGrid with category filtering and tool counting functionality ([05c51db](https://github.com/masmuss/devtoolbox/commit/05c51db7b55e1faaabea32fe63c569ea2c9ab839))
+- enhance ToolsGrid with category filtering and tool counting functionality ([05c51db](https://github.com/masmuss/devtoolbox/commit/05c51db7b55e1faaabea32fe63c569ea2c9ab839))
 
 ## [0.0.9](https://github.com/masmuss/devtoolbox/compare/v0.0.8...v0.0.9) (2025-08-16)
 
