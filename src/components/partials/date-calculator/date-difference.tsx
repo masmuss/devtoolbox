@@ -6,11 +6,10 @@ import { DifferenceBreakdown } from "./difference-breakdown";
 import { Calendar, ArrowRight } from "lucide-react";
 import { calculateDateDifference, validateDate, formatDuration } from "@/lib/utils/date-calculator";
 import ToolSection from "@/components/tool-section";
-import type { DateCalculatorState } from "./type";
 
 interface DateDifferenceProps {
-	state: DateCalculatorState;
-	updateState: (updates: Partial<DateCalculatorState>) => void;
+	state: any;
+	updateState: (updates: any) => void;
 }
 
 export function DateDifference({ state, updateState }: DateDifferenceProps) {
