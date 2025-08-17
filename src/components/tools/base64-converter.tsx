@@ -4,15 +4,12 @@ import {
 	getEmptyBase64Results,
 	type Base64Results,
 } from "@/lib/utils/base64-converter";
-import { ArrowUpDown, FileText, ImageIcon } from "lucide-react";
+import { FileText, ImageIcon } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToolState } from "@/lib/hooks/use-tool-state";
 import { TextEncoder } from "../partials/base64/text-encoder";
 import { TextDecoder } from "../partials/base64/text-decoder";
 import { FileConverter } from "../partials/base64/file-converter";
-import { ToolGuide } from "../tool-guide";
-import { Base64Info } from "../partials/base64/base64-info";
 
 interface Base64State {
 	textInput: string;
