@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.0.10](https://github.com/masmuss/devtoolbox/compare/v0.0.9...v0.0.10) (2025-08-17)
+
+
+### Features
+
+* enhance ToolsGrid with category filtering and tool counting functionality ([05c51db](https://github.com/masmuss/devtoolbox/commit/05c51db7b55e1faaabea32fe63c569ea2c9ab839))
+
 ## [0.0.9](https://github.com/masmuss/devtoolbox/compare/v0.0.8...v0.0.9) (2025-08-16)
 
 ### Features
