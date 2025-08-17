@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.0.16](https://github.com/masmuss/devtoolbox/compare/v0.0.15...v0.0.16) (2025-08-17)
+
+
+### Features
+
+* add Unix Timestamp Converter tool with human-readable date formats ([6dceec8](https://github.com/masmuss/devtoolbox/commit/6dceec8917e346cba074d647b853cab8c313daf0))
+* implement date calculator tool with difference and arithmetic functionalities ([4e11e62](https://github.com/masmuss/devtoolbox/commit/4e11e623f97bb81f79447afd6d9a8aad78e5d9a8))
+
 ## [0.0.15](https://github.com/masmuss/devtoolbox/compare/v0.0.14...v0.0.15) (2025-08-17)
 
 ### Features
