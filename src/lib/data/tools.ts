@@ -157,6 +157,7 @@ export const allTools: Tool[] = [
 		description: "Calculate differences between dates and add/subtract time periods",
 		icon: Calendar,
 		category: "Time",
+		href: "/tools/date-calculator",
 	},
 	{
 		title: "Timezone Converter",
