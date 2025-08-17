@@ -1,0 +1,19 @@
+---
+import PageHeader from "@/components/layouts/PageHeader.astro";
+import { Base64Info } from "@/components/partials/base64/base64-info";
+import Base64ConverterComponent from "@/components/tools/base64-converter";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Base64 Encoder/Decoder" description="Encode and decode Base64 text and files">
+	<main class="space-8 mx-auto max-w-5xl px-6 py-12 lg:px-8">
+		<PageHeader
+			title="Base64 Encoder/Decoder"
+			description="Encode and decode Base64 text and files"
+		/>
+
+		<Base64ConverterComponent client:load />
+
+		<Base64Info />
+	</main>
+</BaseLayout>
