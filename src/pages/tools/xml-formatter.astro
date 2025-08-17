@@ -1,0 +1,19 @@
+---
+import PageHeader from "@/components/layouts/PageHeader.astro";
+import XmlFormatterComponent from "@/components/tools/xml-formatter";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+	title="XML Formatter"
+	description="Format, validate, and analyze XML documents with detailed statistics"
+>
+	<main class="space-8 mx-auto max-w-7xl px-6 py-12 lg:px-8">
+		<PageHeader
+			title="XML Formatter"
+			description="Format, validate, and analyze XML documents with detailed statistics"
+		/>
+
+		<XmlFormatterComponent client:load />
+	</main>
+</BaseLayout>
