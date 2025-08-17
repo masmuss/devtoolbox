@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.0.14](https://github.com/masmuss/devtoolbox/compare/v0.0.13...v0.0.14) (2025-08-17)
+
+
+### Features
+
+* implement JSON formatter tool with editor, examples, and statistics ([da99754](https://github.com/masmuss/devtoolbox/commit/da997545e0abd63d597b2851958a1d7745d11315))
+
 ## [0.0.13](https://github.com/masmuss/devtoolbox/compare/v0.0.12...v0.0.13) (2025-08-17)
 
 ### Features
