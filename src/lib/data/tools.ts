@@ -150,7 +150,7 @@ export const allTools: Tool[] = [
 		description: "Convert between Unix timestamps and human-readable date formats",
 		icon: Clock,
 		category: "Time",
-		href: "/tools/timestamp",
+		href: "/tools/unix-timestamp-converter",
 	},
 	{
 		title: "Date Calculator",

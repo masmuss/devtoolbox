@@ -4,10 +4,9 @@ All notable changes to this project will be documented in this file. See [commit
 
 ## [0.0.15](https://github.com/masmuss/devtoolbox/compare/v0.0.14...v0.0.15) (2025-08-17)
 
-
 ### Features
 
-* add XML formatter tool with editor, examples, and statistics ([f1db64f](https://github.com/masmuss/devtoolbox/commit/f1db64f340d588eb4db6a3c73f82941e81a9e2e9))
+- add XML formatter tool with editor, examples, and statistics ([f1db64f](https://github.com/masmuss/devtoolbox/commit/f1db64f340d588eb4db6a3c73f82941e81a9e2e9))
 
 ## [0.0.14](https://github.com/masmuss/devtoolbox/compare/v0.0.13...v0.0.14) (2025-08-17)
 
