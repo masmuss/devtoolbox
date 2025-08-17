@@ -2,21 +2,38 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.0.15](https://github.com/masmuss/devtoolbox/compare/v0.0.14...v0.0.15) (2025-08-17)
+
+
+### Features
+
+* add XML formatter tool with editor, examples, and statistics ([f1db64f](https://github.com/masmuss/devtoolbox/commit/f1db64f340d588eb4db6a3c73f82941e81a9e2e9))
+
+## [0.0.14](https://github.com/masmuss/devtoolbox/compare/v0.0.13...v0.0.14) (2025-08-17)
+
+### Features
+
+- implement JSON formatter tool with editor, examples, and statistics ([da99754](https://github.com/masmuss/devtoolbox/commit/da997545e0abd63d597b2851958a1d7745d11315))
+
+## [0.0.13](https://github.com/masmuss/devtoolbox/compare/v0.0.12...v0.0.13) (2025-08-17)
+
+### Features
+
+- add HTML entity encoder tool with encoding/decoding functionality ([2a32e6a](https://github.com/masmuss/devtoolbox/commit/2a32e6aa1984b207d35ec9ad2da245623fb2bc78))
+
 ## [0.0.12](https://github.com/masmuss/devtoolbox/compare/v0.0.11...v0.0.12) (2025-08-17)
 
 ## [0.0.11](https://github.com/masmuss/devtoolbox/compare/v0.0.10...v0.0.11) (2025-08-17)
 
-
 ### Features
 
-* add Base64 encoding/decoding tools with file conversion support ([0f56c02](https://github.com/masmuss/devtoolbox/commit/0f56c022436fcfb43291b169d3ac58c9d3abb5b5))
+- add Base64 encoding/decoding tools with file conversion support ([0f56c02](https://github.com/masmuss/devtoolbox/commit/0f56c022436fcfb43291b169d3ac58c9d3abb5b5))
 
 ## [0.0.10](https://github.com/masmuss/devtoolbox/compare/v0.0.9...v0.0.10) (2025-08-17)
 
-
 ### Features
 
-* enhance ToolsGrid with category filtering and tool counting functionality ([05c51db](https://github.com/masmuss/devtoolbox/commit/05c51db7b55e1faaabea32fe63c569ea2c9ab839))
+- enhance ToolsGrid with category filtering and tool counting functionality ([05c51db](https://github.com/masmuss/devtoolbox/commit/05c51db7b55e1faaabea32fe63c569ea2c9ab839))
 
 ## [0.0.9](https://github.com/masmuss/devtoolbox/compare/v0.0.8...v0.0.9) (2025-08-16)
 
