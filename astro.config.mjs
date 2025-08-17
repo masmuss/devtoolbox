@@ -17,11 +17,4 @@ export default defineConfig({
 		},
 	},
 	integrations: [react()],
-	output: "static",
-	build: {
-		inlineStylesheets: "auto",
-		format: "file",
-	},
-	compressHTML: true,
-	scopedStyleStrategy: "where",
 });
