@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.0.11](https://github.com/masmuss/devtoolbox/compare/v0.0.10...v0.0.11) (2025-08-17)
+
+
+### Features
+
+* add Base64 encoding/decoding tools with file conversion support ([0f56c02](https://github.com/masmuss/devtoolbox/commit/0f56c022436fcfb43291b169d3ac58c9d3abb5b5))
+
 ## [0.0.10](https://github.com/masmuss/devtoolbox/compare/v0.0.9...v0.0.10) (2025-08-17)
 
 
