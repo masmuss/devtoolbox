@@ -4,10 +4,9 @@ All notable changes to this project will be documented in this file. See [commit
 
 ## [0.0.13](https://github.com/masmuss/devtoolbox/compare/v0.0.12...v0.0.13) (2025-08-17)
 
-
 ### Features
 
-* add HTML entity encoder tool with encoding/decoding functionality ([2a32e6a](https://github.com/masmuss/devtoolbox/commit/2a32e6aa1984b207d35ec9ad2da245623fb2bc78))
+- add HTML entity encoder tool with encoding/decoding functionality ([2a32e6a](https://github.com/masmuss/devtoolbox/commit/2a32e6aa1984b207d35ec9ad2da245623fb2bc78))
 
 ## [0.0.12](https://github.com/masmuss/devtoolbox/compare/v0.0.11...v0.0.12) (2025-08-17)
 
