@@ -4,10 +4,9 @@ All notable changes to this project will be documented in this file. See [commit
 
 ## [0.0.9](https://github.com/masmuss/devtoolbox/compare/v0.0.8...v0.0.9) (2025-08-16)
 
-
 ### Features
 
-* implement text diff checker tool with line and word analysis ([1cde75e](https://github.com/masmuss/devtoolbox/commit/1cde75e2a9fffd511eec930a4cdb451834d48ad9))
+- implement text diff checker tool with line and word analysis ([1cde75e](https://github.com/masmuss/devtoolbox/commit/1cde75e2a9fffd511eec930a4cdb451834d48ad9))
 
 ## [0.0.8](https://github.com/masmuss/devtoolbox/compare/v0.0.7...v0.0.8) (2025-08-16)
 
