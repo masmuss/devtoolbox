@@ -1,0 +1,19 @@
+---
+import PageHeader from "@/components/layouts/PageHeader.astro";
+import CronExpressionGeneratorComponent from "@/components/tools/cron-expression-generator";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+	title="Cron Expression Generator"
+	description="Generate, validate, and understand cron expressions for scheduled tasks"
+>
+	<main class="space-8 mx-auto max-w-7xl px-6 py-12 lg:px-8">
+		<PageHeader
+			title="Cron Expression Generator"
+			description="Generate, validate, and understand cron expressions for scheduled tasks"
+		/>
+
+		<CronExpressionGeneratorComponent client:load />
+	</main>
+</BaseLayout>

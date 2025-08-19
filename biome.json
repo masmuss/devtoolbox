@@ -7,14 +7,15 @@
 	},
 	"files": {
 		"ignoreUnknown": false,
-		"includes": ["!**/src/components/ui/**/*"]
+		"includes": ["!**/src/components/ui/**/*"],
+		"experimentalScannerIgnores": ["!**/*.md"]
 	},
 	"formatter": {
 		"indentStyle": "tab",
 		"indentWidth": 2,
 		"lineWidth": 100,
 		"formatWithErrors": true,
-		"includes": ["**", "!**/*.astro"]
+		"includes": ["**", "**/*.astro"]
 	},
 	"linter": {
 		"enabled": true,
