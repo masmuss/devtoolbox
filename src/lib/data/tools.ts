@@ -170,6 +170,7 @@ export const allTools: Tool[] = [
 		description: "Generate and validate cron expressions for scheduled tasks",
 		icon: Clock,
 		category: "Time",
+		href: "/tools/cron-expression-generator",
 	},
 
 	// Utilities
