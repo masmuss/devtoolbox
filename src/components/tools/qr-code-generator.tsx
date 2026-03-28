@@ -60,21 +60,19 @@ export default function QrCodeGenerator() {
 						/>
 					</div>
 
-					<div className="grid gap-6 sm:grid-cols-2">
-						<div className="space-y-3">
-							<Label htmlFor="level">Error Correction Level</Label>
-							<select
-								id="level"
-								value={level}
-								onChange={(e) => setLevel(e.target.value as "L" | "M" | "Q" | "H")}
-								className="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-10 w-full rounded-md border px-3 py-2 text-sm focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50"
-							>
-								<option value="L">Low (7%)</option>
-								<option value="M">Medium (15%)</option>
-								<option value="Q">Quartile (25%)</option>
-								<option value="H">High (30%)</option>
-							</select>
-						</div>
+					<div className="space-y-3">
+						<Label htmlFor="level">Error Correction Level</Label>
+						<select
+							id="level"
+							value={level}
+							onChange={(e) => setLevel(e.target.value as "L" | "M" | "Q" | "H")}
+							className="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-10 w-full rounded-md border px-3 py-2 text-sm focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50"
+						>
+							<option value="L">Low (7%)</option>
+							<option value="M">Medium (15%)</option>
+							<option value="Q">Quartile (25%)</option>
+							<option value="H">High (30%)</option>
+						</select>
 					</div>
 
 					<div className="grid gap-6 sm:grid-cols-2">
