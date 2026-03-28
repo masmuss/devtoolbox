@@ -1,11 +1,11 @@
+import { Code2, FileText } from "lucide-react";
 import { useState } from "react";
+import { CopyButton } from "@/components/copy-button";
+import ToolSection from "@/components/tool-section";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
-import { CopyButton } from "@/components/copy-button";
-import { Code2, FileText } from "lucide-react";
-import ToolSection from "@/components/tool-section";
+import { Textarea } from "@/components/ui/textarea";
 
 interface EntityConverterProps {
 	input: string;

@@ -1,9 +1,9 @@
 import { RefreshCw } from "lucide-react";
+import { CopyButton } from "@/components/copy-button";
+import { PasswordSecurityIndicator } from "@/components/partials/password/password-security-indicator.tsx";
+import ToolSection from "@/components/tool-section.tsx";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { CopyButton } from "@/components/copy-button";
-import ToolSection from "@/components/tool-section.tsx";
-import { PasswordSecurityIndicator } from "@/components/partials/password/password-security-indicator.tsx";
 
 interface PasswordOutputProps {
 	password: string;

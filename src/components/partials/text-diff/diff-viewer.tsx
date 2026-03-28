@@ -1,8 +1,8 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Badge } from "@/components/ui/badge";
-import { Eye, Code, FileText } from "lucide-react";
-import type { DiffLine } from "@/lib/utils/text-diff";
+import { Code, Eye, FileText } from "lucide-react";
 import ToolSection from "@/components/tool-section";
+import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import type { DiffLine } from "@/lib/utils/text-diff";
 import { DiffLineView } from "./diff-line-view";
 import { DiffWordView } from "./diff-word-view";
 

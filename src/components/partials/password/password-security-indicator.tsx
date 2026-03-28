@@ -1,8 +1,8 @@
 import { Info, Shield } from "lucide-react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { getPasswordStrength } from "@/lib/utils/password-generator";
-import { useState } from "react";
 
 interface PasswordSecurityIndicatorProps {
 	password: string;
@@ -47,8 +47,8 @@ export function PasswordSecurityIndicator({ password }: PasswordSecurityIndicato
 			{showDetails && (
 				<div className="mt-3 border-t border-neutral-200 pt-3 dark:border-neutral-700">
 					<div className="space-y-1">
-						{strength.details.map((detail, index) => (
-							<div key={index} className="flex items-center gap-2 text-xs">
+						{strength.details.map((detail) => (
+							<div key={detail} className="flex items-center gap-2 text-xs">
 								<span
 									className={
 										detail.startsWith("✓")

@@ -1,9 +1,9 @@
-import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
-import { RefreshCw, ArrowUpDown } from "lucide-react";
+import { ArrowUpDown, RefreshCw } from "lucide-react";
 import { CopyButton } from "@/components/copy-button";
 import ToolSection from "@/components/tool-section";
+import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 
 interface URLDecoderTabProps {
 	input: string;
@@ -71,9 +71,12 @@ export function URLDecoderTab({
 			</div>
 
 			<div className="space-y-2">
-				<label className="text-sm font-medium text-black dark:text-white">Output (Decoded)</label>
+				<Label htmlFor="decoder-output" className="text-sm font-medium text-black dark:text-white">
+					Output (Decoded)
+				</Label>
 				<div className="relative">
 					<Textarea
+						id="decoder-output"
 						value={output}
 						readOnly
 						placeholder="Decoded URL will appear here..."
@@ -86,13 +89,11 @@ export function URLDecoderTab({
 			</div>
 
 			<div className="space-y-2">
-				<label className="text-sm text-neutral-600 dark:text-neutral-400">
-					Try these examples:
-				</label>
+				<div className="text-sm text-neutral-600 dark:text-neutral-400">Try these examples:</div>
 				<div className="grid gap-2">
-					{exampleEncoded.map((url, index) => (
+					{exampleEncoded.map((url) => (
 						<Button
-							key={index}
+							key={url}
 							variant="outline"
 							size="sm"
 							onClick={() => onInputChange(url)}

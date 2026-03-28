@@ -1,7 +1,7 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { type ReactNode } from "react";
-import { cn } from "@/lib/utils.ts";
 import type { LucideIcon } from "lucide-react";
+import type { ReactNode } from "react";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { cn } from "@/lib/utils.ts";
 
 interface ToolSectionProps {
 	title: string;

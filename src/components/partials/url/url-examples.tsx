@@ -1,7 +1,7 @@
+import { FileText } from "lucide-react";
 import ToolSection from "@/components/tool-section";
 import { Button } from "@/components/ui/button";
 import { urlExamples } from "@/lib/utils/url-encoder";
-import { FileText } from "lucide-react";
 
 interface URLExamplesProps {
 	onSelectExample: (example: string) => void;

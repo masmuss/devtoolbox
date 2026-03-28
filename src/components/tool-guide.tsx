@@ -1,5 +1,5 @@
+import type React from "react";
 import ToolSectionWrapper from "@/components/tool-section.tsx";
-import React from "react";
 
 interface ToolGuideProps {
 	title: string;

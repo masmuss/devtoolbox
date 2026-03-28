@@ -1,9 +1,9 @@
 import { useToolState } from "@/lib/hooks/use-tool-state";
 import { JWTHeaderSection } from "../partials/jwt/jwt-header-section";
+import { JWTInfo } from "../partials/jwt/jwt-info";
+import { JWTOutputSection } from "../partials/jwt/jwt-output-section";
 import { JWTPayloadSection } from "../partials/jwt/jwt-payload-section";
 import { JWTSecretSection } from "../partials/jwt/jwt-secret-section";
-import { JWTOutputSection } from "../partials/jwt/jwt-output-section";
-import { JWTInfo } from "../partials/jwt/jwt-info";
 
 interface JWTGeneratorState {
 	header: string;

@@ -1,7 +1,7 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Textarea } from "@/components/ui/textarea";
 import { Type } from "lucide-react";
 import { CopyButton } from "@/components/copy-button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Textarea } from "@/components/ui/textarea";
 import { getCharacterCount, getWordCount } from "@/lib/utils/text-counter";
 
 interface TextOutputProps {

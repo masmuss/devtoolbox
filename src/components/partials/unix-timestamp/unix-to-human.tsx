@@ -1,15 +1,15 @@
+import { Clock, RefreshCw } from "lucide-react";
 import { useState } from "react";
+import ToolSection from "@/components/tool-section";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { ConversionResult } from "./conversion-result";
-import { Clock, RefreshCw } from "lucide-react";
 import {
 	convertUnixTimestamp,
 	getCurrentTimestamp,
 	validateTimestamp,
 } from "@/lib/utils/unix-timestamp";
-import ToolSection from "@/components/tool-section";
+import { ConversionResult } from "./conversion-result";
 
 interface UnixToHumanProps {
 	state: any;

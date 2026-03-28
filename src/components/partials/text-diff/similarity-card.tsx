@@ -1,6 +1,6 @@
+import { TrendingUp } from "lucide-react";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
-import { TrendingUp } from "lucide-react";
 
 interface SimilarityCardProps {
 	similarity: number;

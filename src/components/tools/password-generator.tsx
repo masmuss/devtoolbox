@@ -1,10 +1,10 @@
+import { PasswordOptionsComponent } from "@/components/partials/password/password-options.tsx";
+import { PasswordOutput } from "@/components/partials/password/password-output.tsx";
 import { useToolState } from "@/lib/hooks/use-tool-state.ts";
 import {
 	generateSecurePassword,
 	type PasswordGeneratorState,
 } from "@/lib/utils/password-generator.ts";
-import { PasswordOutput } from "@/components/partials/password/password-output.tsx";
-import { PasswordOptionsComponent } from "@/components/partials/password/password-options.tsx";
 
 export default function PasswordGeneratorComponent() {
 	const { state, updateState } = useToolState<PasswordGeneratorState>({

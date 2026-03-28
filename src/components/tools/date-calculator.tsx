@@ -1,6 +1,6 @@
 import { useToolState } from "@/lib/hooks/use-tool-state";
-import { DateDifference } from "../partials/date-calculator/date-difference";
 import { DateArithmetic } from "../partials/date-calculator/date-arithmetic";
+import { DateDifference } from "../partials/date-calculator/date-difference";
 import type { DateCalculatorState } from "../partials/date-calculator/type";
 
 export default function DateCalculatorComponent() {

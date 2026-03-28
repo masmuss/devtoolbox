@@ -15,7 +15,10 @@ export function DiffWordView({ wordDiff }: DiffWordViewProps) {
 			</div>
 			<div
 				className="prose prose-sm max-h-[600px] max-w-none overflow-y-auto font-mono text-sm leading-relaxed"
-				dangerouslySetInnerHTML={{ __html: wordDiff }}
+				dangerouslySetInnerHTML={
+					// biome-ignore lint/security/noDangerouslySetInnerHtml: required for diff highlighting
+					{ __html: wordDiff }
+				}
 				style={{
 					wordBreak: "break-word",
 					lineHeight: "1.8",

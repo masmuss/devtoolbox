@@ -1,8 +1,8 @@
-import { analyzeText } from "@/lib/utils/word-counter";
 import { useMemo } from "react";
-import { TextInput } from "../partials/word-counter/text-input";
 import { useToolState } from "@/lib/hooks/use-tool-state";
+import { analyzeText } from "@/lib/utils/word-counter";
 import { StatsDisplay } from "../partials/word-counter/stats-display";
+import { TextInput } from "../partials/word-counter/text-input";
 
 export default function WordCounterComponent() {
 	const { state, updateState } = useToolState({

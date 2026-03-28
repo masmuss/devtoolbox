@@ -1,8 +1,8 @@
 import { useToolState } from "@/lib/hooks/use-tool-state";
-import { HashInput } from "../partials/hash/hash-input";
 import { generateHash } from "@/lib/utils/hash-generator";
-import { HashOutput } from "../partials/hash/hash-output";
 import { HashInfo } from "../partials/hash/hash-info";
+import { HashInput } from "../partials/hash/hash-input";
+import { HashOutput } from "../partials/hash/hash-output";
 
 interface HashState {
 	input: string;

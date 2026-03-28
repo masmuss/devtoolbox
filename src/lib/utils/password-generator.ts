@@ -108,7 +108,7 @@ export const getPasswordStrength = (
 	}
 
 	// Calculate entropy (bits of randomness)
-	const entropy = Math.log2(Math.pow(charsetSize, password.length));
+	const entropy = Math.log2(charsetSize ** password.length);
 
 	// Additional security checks
 	if (password.length >= 16) {

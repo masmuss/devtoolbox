@@ -1,8 +1,8 @@
+import { RefreshCw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { RefreshCw } from "lucide-react";
+import { Textarea } from "@/components/ui/textarea";
 
 interface SlugInputProps {
 	value: string;
@@ -44,15 +44,15 @@ export function SlugInput({ value, onChange, onClear }: SlugInputProps) {
 						Try these examples:
 					</Label>
 					<div className="flex flex-wrap gap-2">
-						{exampleTexts.map((text, index) => (
+						{exampleTexts.map((text) => (
 							<Button
-								key={index}
+								key={text}
 								variant="outline"
 								size="sm"
 								onClick={() => loadExample(text)}
 								className="border-neutral-200 text-xs hover:bg-neutral-50 dark:border-neutral-800 dark:hover:bg-neutral-900"
 							>
-								{text.length > 30 ? text.substring(0, 30) + "..." : text}
+								{text.length > 30 ? `${text.substring(0, 30)}...` : text}
 							</Button>
 						))}
 					</div>

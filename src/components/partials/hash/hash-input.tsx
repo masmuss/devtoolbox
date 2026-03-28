@@ -1,3 +1,4 @@
+import { Type } from "lucide-react";
 import ToolSection from "@/components/tool-section";
 import { Button } from "@/components/ui/button";
 import {
@@ -9,7 +10,6 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { hashTypes } from "@/lib/utils/hash-generator";
-import { Type } from "lucide-react";
 
 interface HashInputProps {
 	input: string;

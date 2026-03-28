@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
-import { CopyButton } from "@/components/copy-button";
-import { Label } from "@/components/ui/label";
 import { Clock } from "lucide-react";
-import { getCurrentTimestamp } from "@/lib/utils/unix-timestamp";
+import { useEffect, useState } from "react";
+import { CopyButton } from "@/components/copy-button";
 import ToolSection from "@/components/tool-section";
+import { Label } from "@/components/ui/label";
+import { getCurrentTimestamp } from "@/lib/utils/unix-timestamp";
 
 export function CurrentTimeDisplay() {
 	const [currentTime, setCurrentTime] = useState(getCurrentTimestamp());

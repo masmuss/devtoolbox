@@ -1,7 +1,7 @@
-import { CopyButton } from "@/components/copy-button";
 import { BookOpen } from "lucide-react";
-import { getCommonEntities } from "@/lib/utils/html-entity-encoder";
+import { CopyButton } from "@/components/copy-button";
 import ToolSection from "@/components/tool-section";
+import { getCommonEntities } from "@/lib/utils/html-entity-encoder";
 
 export function EntityReference() {
 	const entities = getCommonEntities();
@@ -13,9 +13,9 @@ export function EntityReference() {
 			description="Reference guide for frequently used HTML entities"
 		>
 			<div className="grid gap-3">
-				{entities.map((entity, index) => (
+				{entities.map((entity) => (
 					<div
-						key={index}
+						key={entity.entity}
 						className="hover:bg-muted/50 flex items-center justify-between rounded-lg border p-3 transition-colors"
 					>
 						<div className="flex items-center gap-4">

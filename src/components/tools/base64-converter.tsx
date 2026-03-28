@@ -1,15 +1,15 @@
-import {
-	encodeToBase64,
-	decodeFromBase64,
-	getEmptyBase64Results,
-	type Base64Results,
-} from "@/lib/utils/base64-converter";
 import { FileText, ImageIcon } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useToolState } from "@/lib/hooks/use-tool-state";
-import { TextEncoder } from "../partials/base64/text-encoder";
-import { TextDecoder } from "../partials/base64/text-decoder";
+import {
+	type Base64Results,
+	decodeFromBase64,
+	encodeToBase64,
+	getEmptyBase64Results,
+} from "@/lib/utils/base64-converter";
 import { FileConverter } from "../partials/base64/file-converter";
+import { TextDecoder } from "../partials/base64/text-decoder";
+import { TextEncoder } from "../partials/base64/text-encoder";
 
 interface Base64State {
 	textInput: string;

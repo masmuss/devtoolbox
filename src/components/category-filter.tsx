@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { getToolsByCategory } from "@/lib/utils/tools-counter";
 import { cn } from "@/lib/utils";
+import { getToolsByCategory } from "@/lib/utils/tools-counter";
 
 interface CategoryFilterProps {
 	categories: string[];

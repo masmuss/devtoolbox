@@ -1,10 +1,10 @@
+import { Info, Settings } from "lucide-react";
+import { CopyButton } from "@/components/copy-button";
+import ToolSection from "@/components/tool-section";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { CopyButton } from "@/components/copy-button";
-import { Settings, Info } from "lucide-react";
 import { generateCronExpression } from "@/lib/utils/cron-generator";
-import ToolSection from "@/components/tool-section";
 
 interface CronBuilderState {
 	minute: string;
