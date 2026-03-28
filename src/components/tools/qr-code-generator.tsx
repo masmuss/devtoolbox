@@ -11,6 +11,14 @@ import {
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
+import { Input } from "@/components/ui/input";
+import {
+	Select,
+	SelectContent,
+	SelectItem,
+	SelectTrigger,
+	SelectValue,
+} from "@/components/ui/select";
 import { Switch } from "@/components/ui/switch";
 import { Download } from "lucide-react";
 import { toast } from "sonner";
@@ -62,35 +70,35 @@ export default function QrCodeGenerator() {
 
 					<div className="space-y-3">
 						<Label htmlFor="level">Error Correction Level</Label>
-						<select
-							id="level"
-							value={level}
-							onChange={(e) => setLevel(e.target.value as "L" | "M" | "Q" | "H")}
-							className="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-10 w-full rounded-md border px-3 py-2 text-sm focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50"
-						>
-							<option value="L">Low (7%)</option>
-							<option value="M">Medium (15%)</option>
-							<option value="Q">Quartile (25%)</option>
-							<option value="H">High (30%)</option>
-						</select>
+						<Select value={level} onValueChange={(v: "L" | "M" | "Q" | "H") => setLevel(v)}>
+							<SelectTrigger id="level">
+								<SelectValue placeholder="Select error level" />
+							</SelectTrigger>
+							<SelectContent>
+								<SelectItem value="L">Low (7%)</SelectItem>
+								<SelectItem value="M">Medium (15%)</SelectItem>
+								<SelectItem value="Q">Quartile (25%)</SelectItem>
+								<SelectItem value="H">High (30%)</SelectItem>
+							</SelectContent>
+						</Select>
 					</div>
 
 					<div className="grid gap-6 sm:grid-cols-2">
 						<div className="space-y-3">
 							<Label htmlFor="fgColor">Foreground Color</Label>
 							<div className="flex gap-2">
-								<input
+								<Input
 									id="fgColor"
 									type="color"
 									value={fgColor}
 									onChange={(e) => setFgColor(e.target.value)}
-									className="h-10 w-12 cursor-pointer rounded border p-1"
+									className="h-10 w-12 cursor-pointer p-1"
 								/>
-								<input
+								<Input
 									type="text"
 									value={fgColor}
 									onChange={(e) => setFgColor(e.target.value)}
-									className="border-input bg-background ring-offset-background flex h-10 w-full rounded-md border px-3 py-2 text-sm uppercase"
+									className="uppercase"
 								/>
 							</div>
 						</div>
@@ -98,18 +106,18 @@ export default function QrCodeGenerator() {
 						<div className="space-y-3">
 							<Label htmlFor="bgColor">Background Color</Label>
 							<div className="flex gap-2">
-								<input
+								<Input
 									id="bgColor"
 									type="color"
 									value={bgColor}
 									onChange={(e) => setBgColor(e.target.value)}
-									className="h-10 w-12 cursor-pointer rounded border p-1"
+									className="h-10 w-12 cursor-pointer p-1"
 								/>
-								<input
+								<Input
 									type="text"
 									value={bgColor}
 									onChange={(e) => setBgColor(e.target.value)}
-									className="border-input bg-background ring-offset-background flex h-10 w-full rounded-md border px-3 py-2 text-sm uppercase"
+									className="uppercase"
 								/>
 							</div>
 						</div>
