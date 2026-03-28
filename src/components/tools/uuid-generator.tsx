@@ -7,6 +7,13 @@ import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { toast } from "sonner";
 import { Input } from "@/components/ui/input";
+import {
+	Select,
+	SelectContent,
+	SelectItem,
+	SelectTrigger,
+	SelectValue,
+} from "@/components/ui/select";
 
 type UuidVersion = "v1" | "v4" | "nil";
 
@@ -64,16 +71,16 @@ export default function UuidGenerator() {
 				<CardContent className="space-y-6">
 					<div className="space-y-3">
 						<Label htmlFor="version">UUID Version</Label>
-						<select
-							id="version"
-							value={version}
-							onChange={(e) => setVersion(e.target.value as UuidVersion)}
-							className="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-10 w-full rounded-md border px-3 py-2 text-sm focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50"
-						>
-							<option value="v4">Version 4 (Random)</option>
-							<option value="v1">Version 1 (Time-based)</option>
-							<option value="nil">Nil UUID (Empty)</option>
-						</select>
+						<Select value={version} onValueChange={(v: UuidVersion) => setVersion(v)}>
+							<SelectTrigger id="version">
+								<SelectValue placeholder="Select UUID version" />
+							</SelectTrigger>
+							<SelectContent>
+								<SelectItem value="v4">Version 4 (Random)</SelectItem>
+								<SelectItem value="v1">Version 1 (Time-based)</SelectItem>
+								<SelectItem value="nil">Nil UUID (Empty)</SelectItem>
+							</SelectContent>
+						</Select>
 					</div>
 
 					<div className="space-y-3">
