@@ -253,6 +253,7 @@ export const allTools: Tool[] = [
 		description: "Convert numbers between binary, decimal, hexadecimal, and octal",
 		icon: Calculator,
 		category: "Math",
+		href: "/tools/number-base",
 	},
 	{
 		title: "Percentage Calculator",
