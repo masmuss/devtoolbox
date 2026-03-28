@@ -261,6 +261,7 @@ export const allTools: Tool[] = [
 		description: "Calculate percentages, percentage changes, and ratios",
 		icon: Calculator,
 		category: "Math",
+		href: "/tools/percentage-calculator",
 	},
 ];
 
