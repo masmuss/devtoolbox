@@ -187,6 +187,7 @@ export const allTools: Tool[] = [
 		description: "Generate QR codes for URLs, text, WiFi credentials, and more",
 		icon: Smartphone,
 		category: "Utilities",
+		href: "/tools/qr-code",
 	},
 	{
 		title: "Regex Tester",
