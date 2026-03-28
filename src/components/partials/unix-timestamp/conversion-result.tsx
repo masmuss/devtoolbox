@@ -1,5 +1,5 @@
-import { Label } from "@/components/ui/label";
 import { CopyButton } from "@/components/copy-button";
+import { Label } from "@/components/ui/label";
 
 interface ConversionResultProps {
 	label: string;

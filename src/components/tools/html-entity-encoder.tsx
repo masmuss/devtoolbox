@@ -1,5 +1,5 @@
 import { useToolState } from "@/lib/hooks/use-tool-state";
-import { encodeHtmlEntities, decodeHtmlEntities } from "@/lib/utils/html-entity-encoder";
+import { decodeHtmlEntities, encodeHtmlEntities } from "@/lib/utils/html-entity-encoder";
 import { EntityConverter } from "../partials/html-entity/entity-converter";
 import { EntityReference } from "../partials/html-entity/entity-references";
 

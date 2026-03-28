@@ -1,8 +1,8 @@
-import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
 import { CopyButton } from "@/components/copy-button";
 import ToolSection from "@/components/tool-section.tsx";
+import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 
 interface JWTOutputSectionProps {
 	output: string;

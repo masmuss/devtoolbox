@@ -184,7 +184,7 @@ export const generateLoremText = (type: string, count: number, startWithLorem: b
 	let result = "";
 
 	switch (type) {
-		case "words":
+		case "words": {
 			const words = [];
 			for (let i = 0; i < count; i++) {
 				words.push(generateWord());
@@ -195,8 +195,9 @@ export const generateLoremText = (type: string, count: number, startWithLorem: b
 			}
 			result = words.join(" ");
 			break;
+		}
 
-		case "sentences":
+		case "sentences": {
 			const sentences = [];
 			for (let i = 0; i < count; i++) {
 				sentences.push(generateSentence());
@@ -206,8 +207,9 @@ export const generateLoremText = (type: string, count: number, startWithLorem: b
 			}
 			result = sentences.join(" ");
 			break;
+		}
 
-		case "paragraphs":
+		case "paragraphs": {
 			const paragraphs = [];
 			for (let i = 0; i < count; i++) {
 				paragraphs.push(generateParagraph());
@@ -218,6 +220,7 @@ export const generateLoremText = (type: string, count: number, startWithLorem: b
 			}
 			result = paragraphs.join("\n\n");
 			break;
+		}
 
 		default:
 			result = "Invalid type selected";

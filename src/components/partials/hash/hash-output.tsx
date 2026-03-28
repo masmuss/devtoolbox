@@ -1,7 +1,7 @@
-import { Textarea } from "@/components/ui/textarea";
-import { CopyButton } from "@/components/copy-button";
 import { Hash } from "lucide-react";
+import { CopyButton } from "@/components/copy-button";
 import ToolSection from "@/components/tool-section";
+import { Textarea } from "@/components/ui/textarea";
 
 interface HashOutputProps {
 	output: string;

@@ -1,10 +1,10 @@
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import { Button } from "@/components/ui/button";
 import { ArrowUpDown } from "lucide-react";
 import { CopyButton } from "@/components/copy-button";
-import { formatBase64 } from "@/lib/utils/base64-converter";
 import ToolSection from "@/components/tool-section";
+import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { formatBase64 } from "@/lib/utils/base64-converter";
 
 interface TextEncoderProps {
 	textInput: string;

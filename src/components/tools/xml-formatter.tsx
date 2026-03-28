@@ -1,8 +1,8 @@
 import { useToolState } from "@/lib/hooks/use-tool-state";
 import { formatXml, minifyXml } from "@/lib/utils/xml-formatter";
 import { XmlEditor } from "../partials/xml/xml-editor";
-import { XmlStats } from "../partials/xml/xml-stats";
 import { XmlExamples } from "../partials/xml/xml-examples";
+import { XmlStats } from "../partials/xml/xml-stats";
 
 interface XmlFormatterState {
 	input: string;

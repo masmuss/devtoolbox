@@ -1,5 +1,5 @@
+import { Check, Copy } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Copy, Check } from "lucide-react";
 import { useClipboard } from "@/lib/hooks/use-clipboard";
 
 interface CopyButtonProps {

@@ -1,8 +1,8 @@
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import { Button } from "@/components/ui/button";
-import { RotateCcw, Type } from "lucide-react";
+import { RotateCcw } from "lucide-react";
 import ToolSection from "@/components/tool-section";
+import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 
 interface CaseInputProps {
 	inputText: string;

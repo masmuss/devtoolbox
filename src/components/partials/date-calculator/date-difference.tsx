@@ -1,15 +1,22 @@
+import { ArrowRight, Calendar } from "lucide-react";
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { DateInputSection } from "./date-input-section";
-import { CalculationResult } from "./calculation-result";
-import { DifferenceBreakdown } from "./difference-breakdown";
-import { Calendar, ArrowRight } from "lucide-react";
-import { calculateDateDifference, validateDate, formatDuration } from "@/lib/utils/date-calculator";
 import ToolSection from "@/components/tool-section";
+import { Button } from "@/components/ui/button";
+import { calculateDateDifference, formatDuration, validateDate } from "@/lib/utils/date-calculator";
+import { CalculationResult } from "./calculation-result";
+import { DateInputSection } from "./date-input-section";
+import { DifferenceBreakdown } from "./difference-breakdown";
+
+interface DateDifferenceState {
+	startDate?: string;
+	endDate?: string;
+	// biome-ignore lint/suspicious/noExplicitAny: Generic difference return type depends on formatDuration
+	difference?: any;
+}
 
 interface DateDifferenceProps {
-	state: any;
-	updateState: (updates: any) => void;
+	state: DateDifferenceState;
+	updateState: (updates: Partial<DateDifferenceState>) => void;
 }
 
 export function DateDifference({ state, updateState }: DateDifferenceProps) {

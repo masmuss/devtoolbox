@@ -1,15 +1,15 @@
+import { Calendar, CheckCircle, XCircle } from "lucide-react";
 import { useState } from "react";
+import ToolSection from "@/components/tool-section";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { CheckCircle, XCircle, Calendar } from "lucide-react";
 import {
-	validateCronExpression,
 	describeCronExpression,
 	getNextExecutionTimes,
+	validateCronExpression,
 } from "@/lib/utils/cron-generator";
-import ToolSection from "@/components/tool-section";
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 interface CronExpressionState {
 	minute: string;
@@ -97,8 +97,8 @@ export function CronValidator({ state, updateState }: CronValidatorProps) {
 					<div className="bg-muted rounded-lg p-4">
 						<h4 className="mb-3 text-sm font-medium">Next 5 Execution Times</h4>
 						<div className="space-y-2">
-							{nextRuns.map((time, index) => (
-								<div key={index} className="flex items-center justify-between text-sm">
+							{nextRuns.map((time) => (
+								<div key={time.toISOString()} className="flex items-center justify-between text-sm">
 									<span>{time.toLocaleString()}</span>
 									<span className="text-muted-foreground font-mono">{time.toISOString()}</span>
 								</div>

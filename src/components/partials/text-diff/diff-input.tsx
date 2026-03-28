@@ -1,8 +1,8 @@
-import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
-import { FileText, FileX, Upload, RotateCcw } from "lucide-react";
+import { FileText, FileX, RotateCcw, Upload } from "lucide-react";
 import { useRef } from "react";
 import ToolSection from "@/components/tool-section";
+import { Button } from "@/components/ui/button";
+import { Textarea } from "@/components/ui/textarea";
 
 interface DiffInputProps {
 	originalText: string;

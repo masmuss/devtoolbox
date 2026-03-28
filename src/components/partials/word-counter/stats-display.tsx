@@ -1,8 +1,8 @@
-import { Card, CardContent, CardDescription, CardFooter, CardHeader } from "@/components/ui/card";
 import { BarChart3, Clock, Eye, MessageSquare, TrendingUp } from "lucide-react";
-import type { WordCountStats, ReadabilityStats } from "@/lib/utils/word-counter";
 import ToolSection from "@/components/tool-section";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader } from "@/components/ui/card";
+import type { ReadabilityStats, WordCountStats } from "@/lib/utils/word-counter";
 
 interface StatsDisplayProps {
 	stats: WordCountStats & { readability: ReadabilityStats };
@@ -47,9 +47,9 @@ export function StatsDisplay({ stats }: StatsDisplayProps) {
 				description="Comprehensive analysis of your text content"
 			>
 				<div className="grid grid-cols-2 gap-4 md:grid-cols-3">
-					{basicStats.map((stat, index) => (
+					{basicStats.map((stat) => (
 						<Card
-							key={`${stat.label}-${index}`}
+							key={`${stat.label}-${stat.subtext}`}
 							className="text-center transition-shadow hover:shadow-md"
 						>
 							<CardHeader className="flex items-center justify-center capitalize">
@@ -142,7 +142,7 @@ export function StatsDisplay({ stats }: StatsDisplayProps) {
 								</CardDescription>
 							</CardHeader>
 							<CardContent className="flex flex-wrap gap-3">
-								{stats.readability.mostCommonWords.map((item, index) => (
+								{stats.readability.mostCommonWords.map((item) => (
 									<Button key={item.word} variant="outline" size="sm">
 										<span className="font-medium">{item.word}</span>
 										<span className="text-muted-foreground ml-2">×{item.count}</span>

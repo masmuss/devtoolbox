@@ -1,13 +1,12 @@
-import type React from "react";
-
-import { useState } from "react";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
 import { ImageIcon } from "lucide-react";
+import type React from "react";
+import { useState } from "react";
 import { CopyButton } from "@/components/copy-button";
-import { fileToBase64, formatBase64, getFileSize } from "@/lib/utils/base64-converter";
 import ToolSection from "@/components/tool-section";
 import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { fileToBase64, formatBase64, getFileSize } from "@/lib/utils/base64-converter";
 
 interface FileConverterProps {
 	fileBase64: string;

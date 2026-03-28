@@ -1,9 +1,9 @@
 import { useToolState } from "@/lib/hooks/use-tool-state";
+import { AlgorithmSelector } from "../partials/hmac/algorithm-selector";
+import { HMACInfo } from "../partials/hmac/hmac-info";
+import { HMACOutput } from "../partials/hmac/hmac-output";
 import { MessageInput } from "../partials/hmac/message-input";
 import { SecretKeyInput } from "../partials/hmac/secret-key-input";
-import { AlgorithmSelector } from "../partials/hmac/algorithm-selector";
-import { HMACOutput } from "../partials/hmac/hmac-output";
-import { HMACInfo } from "../partials/hmac/hmac-info";
 
 interface HMACState {
 	message: string;

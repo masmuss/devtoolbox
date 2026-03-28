@@ -1,9 +1,9 @@
+import { Eye, EyeOff, Lock } from "lucide-react";
 import { useState } from "react";
+import ToolSection from "@/components/tool-section.tsx";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Eye, EyeOff, Lock } from "lucide-react";
-import ToolSection from "@/components/tool-section.tsx";
 
 interface JWTSecretSectionProps {
 	secret: string;

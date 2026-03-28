@@ -1,10 +1,9 @@
-import type React from "react";
-
-import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
 import { FileText, Upload, X } from "lucide-react";
+import type React from "react";
 import { useRef } from "react";
 import ToolSection from "@/components/tool-section";
+import { Button } from "@/components/ui/button";
+import { Textarea } from "@/components/ui/textarea";
 
 interface TextInputProps {
 	text: string;

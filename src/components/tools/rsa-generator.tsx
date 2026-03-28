@@ -1,6 +1,6 @@
+import { useToolState } from "@/lib/hooks/use-tool-state.ts";
 import { KeyConfiguration } from "../partials/rsa/key-configuration";
 import { KeyDisplay } from "../partials/rsa/key-display";
-import { useToolState } from "@/lib/hooks/use-tool-state.ts";
 
 interface RSAState {
 	keySize: string;

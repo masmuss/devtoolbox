@@ -1,12 +1,12 @@
-import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
-import { RefreshCw, ArrowUpDown, Globe } from "lucide-react";
+import { ArrowUpDown, Globe, RefreshCw } from "lucide-react";
 import { CopyButton } from "@/components/copy-button";
-import type { URLEncodingResult } from "@/lib/utils/url-encoder";
 import ToolSection from "@/components/tool-section";
-import { URLStats } from "./url-stats";
-import { URLExamples } from "./url-examples";
+import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import type { URLEncodingResult } from "@/lib/utils/url-encoder";
+import { URLExamples } from "./url-examples";
+import { URLStats } from "./url-stats";
 
 interface URLEncoderTabProps {
 	input: string;

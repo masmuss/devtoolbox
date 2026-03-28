@@ -1,9 +1,9 @@
-import { TextConfiguration, type PresetType } from "@/components/partials/lorem/text-configuration";
-import { TextOutput } from "@/components/partials/lorem/text-output";
-import { QuickPresets } from "@/components/partials/lorem/quick-presets";
 import { LoremInfo } from "@/components/partials/lorem/lorem-info";
-import { generateLoremText } from "@/lib/utils/lorem-generator";
+import { QuickPresets } from "@/components/partials/lorem/quick-presets";
+import { type PresetType, TextConfiguration } from "@/components/partials/lorem/text-configuration";
+import { TextOutput } from "@/components/partials/lorem/text-output";
 import { useToolState } from "@/lib/hooks/use-tool-state";
+import { generateLoremText } from "@/lib/utils/lorem-generator";
 
 interface LoremGeneratorComponentState {
 	type: PresetType;

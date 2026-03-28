@@ -1,12 +1,12 @@
 import { useToolState } from "@/lib/hooks/use-tool-state";
 import {
+	type CaseResults as CaseResultsType,
 	convertTextToAllCases,
 	getEmptyResults,
-	type CaseResults as CaseResultsType,
 } from "@/lib/utils/text-case-converter";
 import { CaseInput } from "../partials/text-case/case-input";
-import { QuickExamples } from "../partials/text-case/quick-examples";
 import { CaseResults } from "../partials/text-case/case-result";
+import { QuickExamples } from "../partials/text-case/quick-examples";
 
 interface TextCaseState {
 	inputText: string;

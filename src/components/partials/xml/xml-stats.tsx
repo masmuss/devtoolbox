@@ -1,6 +1,6 @@
 import { BarChart3 } from "lucide-react";
-import type { XmlFormatResult } from "@/lib/utils/xml-formatter";
 import ToolSection from "@/components/tool-section";
+import type { XmlFormatResult } from "@/lib/utils/xml-formatter";
 
 interface XmlStatsProps {
 	stats: XmlFormatResult["stats"];
@@ -15,7 +15,7 @@ export function XmlStats({ stats, isValid }: XmlStatsProps) {
 		const k = 1024;
 		const sizes = ["B", "KB", "MB"];
 		const i = Math.floor(Math.log(bytes) / Math.log(k));
-		return Number.parseFloat((bytes / Math.pow(k, i)).toFixed(1)) + " " + sizes[i];
+		return Number.parseFloat((bytes / k ** i).toFixed(1)) + " " + sizes[i];
 	};
 
 	return (

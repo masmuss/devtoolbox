@@ -1,8 +1,8 @@
 import { useToolState } from "@/lib/hooks/use-tool-state";
 import { formatJson, minifyJson } from "@/lib/utils/json-formatter";
 import { JsonEditor } from "../partials/json/json-editor";
-import { JsonStats } from "../partials/json/json-stats";
 import { JsonExamples } from "../partials/json/json-examples";
+import { JsonStats } from "../partials/json/json-stats";
 
 interface JsonFormatterState {
 	input: string;

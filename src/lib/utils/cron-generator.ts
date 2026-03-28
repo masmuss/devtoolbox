@@ -1,6 +1,6 @@
-import cronstrue from "cronstrue";
 import { CronExpressionParser } from "cron-parser";
-import { toZonedTime, fromZonedTime } from "date-fns-tz";
+import cronstrue from "cronstrue";
+import { fromZonedTime, toZonedTime } from "date-fns-tz";
 
 export interface CronExpression {
 	minute: string;
@@ -281,9 +281,9 @@ export function getFrequencyAnalysis(expression: string): {
 		}
 
 		const runsPerYear = count;
-		const runsPerMonth = parseFloat((runsPerYear / 12).toFixed(2));
-		const runsPerWeek = parseFloat((runsPerYear / 52.1775).toFixed(2)); // More precise number of weeks in a year
-		const runsPerDay = parseFloat((runsPerYear / 365.25).toFixed(2)); // Account for leap years
+		const runsPerMonth = Number.parseFloat((runsPerYear / 12).toFixed(2));
+		const runsPerWeek = Number.parseFloat((runsPerYear / 52.1775).toFixed(2)); // More precise number of weeks in a year
+		const runsPerDay = Number.parseFloat((runsPerYear / 365.25).toFixed(2)); // Account for leap years
 
 		let type: "minute" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "complex" =
 			"complex";
@@ -332,7 +332,7 @@ export function convertTimezone(expression: string, fromTz: string, toTz: string
 
 	const { minute, hour, dayOfMonth, month, dayOfWeek } = parsed;
 
-	if (isNaN(parseInt(hour)) || isNaN(parseInt(minute))) {
+	if (isNaN(Number.parseInt(hour)) || isNaN(Number.parseInt(minute))) {
 		try {
 			const nextRunInFromTz = getNextExecutionTimes(expression, 1, fromTz)[0];
 			if (!nextRunInFromTz) return expression;
@@ -354,8 +354,8 @@ export function convertTimezone(expression: string, fromTz: string, toTz: string
 			now.getFullYear(),
 			now.getMonth(),
 			now.getDate(),
-			parseInt(hour),
-			parseInt(minute),
+			Number.parseInt(hour),
+			Number.parseInt(minute),
 		);
 
 		const utcTime = fromZonedTime(dateInFromTz, fromTz);

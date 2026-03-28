@@ -1,7 +1,7 @@
+import { CopyButton } from "@/components/copy-button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { CopyButton } from "@/components/copy-button";
 
 interface SlugOutputProps {
 	output: string;

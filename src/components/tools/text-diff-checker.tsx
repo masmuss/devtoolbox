@@ -1,6 +1,6 @@
-import { useToolState } from "@/lib/hooks/use-tool-state";
-import { generateDiff, generateWordDiff, calculateSimilarity } from "@/lib/utils/text-diff";
 import { useMemo } from "react";
+import { useToolState } from "@/lib/hooks/use-tool-state";
+import { calculateSimilarity, generateDiff, generateWordDiff } from "@/lib/utils/text-diff";
 import { DiffInput } from "../partials/text-diff/diff-input";
 import { DiffStatsDisplay } from "../partials/text-diff/diff-stats";
 import { DiffViewer } from "../partials/text-diff/diff-viewer";

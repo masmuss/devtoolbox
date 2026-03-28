@@ -1,9 +1,9 @@
+import { Edit, Minus, Plus } from "lucide-react";
+import ToolSection from "@/components/tool-section";
 import { Card } from "@/components/ui/card";
+import type { DiffStats } from "@/lib/utils/text-diff";
 import { SimilarityCard } from "./similarity-card";
 import { StatCard } from "./stat-card";
-import type { DiffStats } from "@/lib/utils/text-diff";
-import { Plus, Minus, Edit } from "lucide-react";
-import ToolSection from "@/components/tool-section";
 
 interface DiffStatsProps {
 	stats: DiffStats;

@@ -1,4 +1,5 @@
-import { Textarea } from "@/components/ui/textarea";
+import { Shield } from "lucide-react";
+import ToolSection from "@/components/tool-section.tsx";
 import { Label } from "@/components/ui/label";
 import {
 	Select,
@@ -7,8 +8,7 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "@/components/ui/select";
-import { Shield } from "lucide-react";
-import ToolSection from "@/components/tool-section.tsx";
+import { Textarea } from "@/components/ui/textarea";
 
 interface JWTHeaderSectionProps {
 	header: string;

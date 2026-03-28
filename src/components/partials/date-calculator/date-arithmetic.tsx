@@ -1,15 +1,22 @@
+import { Minus, Plus } from "lucide-react";
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { CalculationResult } from "./calculation-result";
-import { Plus, Minus } from "lucide-react";
-import { addToDate, subtractFromDate, validateDate } from "@/lib/utils/date-calculator";
 import ToolSection from "@/components/tool-section";
+import { Button } from "@/components/ui/button";
+import { addToDate, subtractFromDate, validateDate } from "@/lib/utils/date-calculator";
+import { CalculationResult } from "./calculation-result";
 import { DateInputSection } from "./date-input-section";
 import { UnitSelector } from "./unit-selector";
 
+interface DateArithmeticState {
+	baseDate?: string;
+	amount?: string;
+	unit?: "seconds" | "minutes" | "hours" | "days" | "weeks" | "months" | "years" | string;
+	result?: { formatted: string; iso: string; relative: string } | null;
+}
+
 interface DateArithmeticProps {
-	state: any;
-	updateState: (updates: any) => void;
+	state: DateArithmeticState;
+	updateState: (updates: Partial<DateArithmeticState>) => void;
 }
 
 export function DateArithmetic({ state, updateState }: DateArithmeticProps) {
@@ -19,13 +26,13 @@ export function DateArithmetic({ state, updateState }: DateArithmeticProps) {
 		const dateValidation = validateDate(state.baseDate || "");
 		const amount = Number.parseInt(state.amount || "0");
 
-		if (!dateValidation.isValid) {
+		if (!dateValidation.isValid || !dateValidation.date) {
 			setError(dateValidation.error || "Invalid date");
 			updateState({ result: null });
 			return;
 		}
 
-		if (isNaN(amount)) {
+		if (Number.isNaN(amount)) {
 			setError("Invalid amount");
 			updateState({ result: null });
 			return;
@@ -42,11 +49,11 @@ export function DateArithmetic({ state, updateState }: DateArithmeticProps) {
 		try {
 			const result =
 				operation === "add"
-					? addToDate(dateValidation.date!, amount, state.unit)
-					: subtractFromDate(dateValidation.date!, amount, state.unit);
+					? addToDate(dateValidation.date, amount, state.unit)
+					: subtractFromDate(dateValidation.date, amount, state.unit);
 
 			updateState({ result });
-		} catch (err) {
+		} catch (_err) {
 			setError("Calculation error");
 			updateState({ result: null });
 		}

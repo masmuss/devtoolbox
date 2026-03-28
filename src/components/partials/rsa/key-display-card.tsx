@@ -1,9 +1,9 @@
+import { Download, Eye, EyeOff, Lock, Unlock } from "lucide-react";
 import { CopyButton } from "@/components/copy-button";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
-import { Download, Eye, EyeOff, Lock, Unlock } from "lucide-react";
 
 interface KeyDisplayCardProps {
 	type: "public" | "private";

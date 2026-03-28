@@ -1,13 +1,13 @@
+import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useToolState } from "@/lib/hooks/use-tool-state";
-import { URLDecoderTab } from "../partials/url/url-decoder-tab";
-import { useState } from "react";
 import {
 	decodeURL,
 	encodeURL,
 	type URLDecodingResult,
 	type URLEncodingResult,
 } from "@/lib/utils/url-encoder";
+import { URLDecoderTab } from "../partials/url/url-decoder-tab";
 import { URLEncoderTab } from "../partials/url/url-encoder-tab";
 
 interface URLEncoderState {

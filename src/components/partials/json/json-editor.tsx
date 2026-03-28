@@ -1,6 +1,9 @@
+import { AlertCircle, Code2, FileText, Minimize2 } from "lucide-react";
 import { useState } from "react";
+import { CopyButton } from "@/components/copy-button";
+import ToolSection from "@/components/tool-section";
+import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import {
 	Select,
@@ -9,10 +12,7 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "@/components/ui/select";
-import { CopyButton } from "@/components/copy-button";
-import { Code2, Minimize2, FileText, AlertCircle } from "lucide-react";
-import { Alert, AlertDescription } from "@/components/ui/alert";
-import ToolSection from "@/components/tool-section";
+import { Textarea } from "@/components/ui/textarea";
 
 interface JsonEditorProps {
 	input: string;

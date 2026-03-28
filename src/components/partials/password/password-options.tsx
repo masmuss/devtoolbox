@@ -1,8 +1,8 @@
+import ToolSection from "@/components/tool-section.tsx";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import type { PasswordOptions } from "@/lib/utils/password-generator";
-import ToolSection from "@/components/tool-section.tsx";
 
 interface PasswordOptionsProps {
 	length: number;
