@@ -1,0 +1,19 @@
+---
+import PageHeader from "@/components/layouts/PageHeader.astro";
+import QrCodeGeneratorComponent from "@/components/tools/qr-code-generator";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+	title="QR Code Generator"
+	description="Generate QR codes for URLs, text, WiFi credentials, and more"
+>
+	<main class="mx-auto max-w-5xl px-6 py-12 lg:px-8">
+		<PageHeader
+			title="QR Code Generator"
+			description="Instantly generate customizable QR Codes for any text, URL, or data. Download in high-quality PNG format."
+		/>
+
+		<QrCodeGeneratorComponent client:load />
+	</main>
+</BaseLayout>
