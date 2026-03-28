@@ -1,0 +1,19 @@
+---
+import PageHeader from "@/components/layouts/PageHeader.astro";
+import UuidGeneratorComponent from "@/components/tools/uuid-generator";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+	title="UUID Generator"
+	description="Generate unique identifiers (UUID v1, v4) for your applications"
+>
+	<main class="mx-auto max-w-5xl px-6 py-12 lg:px-8">
+		<PageHeader
+			title="UUID Generator"
+			description="Generate secure, universally unique identifiers (UUIDs) for your databases and applications. Customize version, format, and generate in bulk."
+		/>
+
+		<UuidGeneratorComponent client:load />
+	</main>
+</BaseLayout>
