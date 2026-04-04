@@ -1,0 +1,19 @@
+---
+import PageHeader from "@/components/layouts/PageHeader.astro";
+import MongoQueryBuilderComponent from "@/components/tools/mongo-query-builder";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+	title="MongoDB Query Builder"
+	description="Visually construct complex MongoDB queries and filters without writing raw JSON manually."
+>
+	<main class="mx-auto max-w-7xl px-6 py-12 lg:px-8">
+		<PageHeader
+			title="MongoDB Query Builder"
+			description="Create logical filters involving exact matches, inequalities, regex, and existence checks. Output is perfectly formatted JSON ready for Mongoose or the Node MongoDB driver."
+		/>
+
+		<MongoQueryBuilderComponent client:only="react" />
+	</main>
+</BaseLayout>

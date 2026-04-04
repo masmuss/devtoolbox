@@ -224,6 +224,7 @@ export const allTools: Tool[] = [
 		description: "Build MongoDB queries with a visual interface",
 		icon: Database,
 		category: "Database",
+		href: "/tools/mongo-query-builder",
 	},
 	{
 		title: "Database Schema Generator",
