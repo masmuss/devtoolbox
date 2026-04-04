@@ -213,9 +213,10 @@ export const allTools: Tool[] = [
 	// Database Tools
 	{
 		title: "SQL Formatter",
-		description: "Format and beautify SQL queries with proper indentation",
+		description: "Format SQL queries with proper indentation",
 		icon: Database,
-		category: "Database",
+		category: "Developer",
+		href: "/tools/sql-formatter",
 	},
 	{
 		title: "MongoDB Query Builder",

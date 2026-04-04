@@ -1,0 +1,19 @@
+---
+import PageHeader from "@/components/layouts/PageHeader.astro";
+import SqlFormatterComponent from "@/components/tools/sql-formatter";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+	title="SQL Formatter"
+	description="Format your messy SQL queries into clean, readable code instantly"
+>
+	<main class="mx-auto max-w-5xl px-6 py-12 lg:px-8">
+		<PageHeader
+			title="SQL Formatter"
+			description="Beautify unreadable or minified SQL statements with proper indentation and syntax highlighting. Supports MySQL, PostgreSQL, SQLite, and more."
+		/>
+
+		<SqlFormatterComponent client:load />
+	</main>
+</BaseLayout>
