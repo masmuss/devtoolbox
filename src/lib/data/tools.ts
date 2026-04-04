@@ -191,9 +191,10 @@ export const allTools: Tool[] = [
 	},
 	{
 		title: "Regex Tester",
-		description: "Test and debug regular expressions with real-time matching",
+		description: "Test and visualize regular expressions interactively",
 		icon: Terminal,
 		category: "Utilities",
+		href: "/tools/regex-tester",
 	},
 	{
 		title: "Email Validator",

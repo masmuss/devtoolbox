@@ -1,0 +1,16 @@
+---
+import PageHeader from "@/components/layouts/PageHeader.astro";
+import RegexTesterComponent from "@/components/tools/regex-tester";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Regex Tester" description="Test and visualize regular expressions interactively">
+	<main class="mx-auto max-w-5xl px-6 py-12 lg:px-8">
+		<PageHeader
+			title="Regex Tester & Highlighter"
+			description="Test your regular expressions in real-time. Instantly see your matches, manage JS Regex flags, and validate syntax."
+		/>
+
+		<RegexTesterComponent client:load />
+	</main>
+</BaseLayout>
