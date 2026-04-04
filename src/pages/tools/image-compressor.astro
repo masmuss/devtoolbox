@@ -1,0 +1,19 @@
+---
+import PageHeader from "@/components/layouts/PageHeader.astro";
+import ImageCompressorComponent from "@/components/tools/image-compressor";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+	title="Image Compressor"
+	description="Compress your JPEG, PNG, and WebP images directly in your browser. 100% offline and secure."
+>
+	<main class="mx-auto max-w-6xl px-6 py-12 lg:px-8">
+		<PageHeader
+			title="Image Compressor"
+			description="Reduce image file sizes instantly. All image processing runs locally in your browser to maintain the highest privacy and performance without server uploads."
+		/>
+
+		<ImageCompressorComponent client:only="react" />
+	</main>
+</BaseLayout>

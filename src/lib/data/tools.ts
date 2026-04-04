@@ -239,6 +239,7 @@ export const allTools: Tool[] = [
 		description: "Compress images while maintaining quality for web optimization",
 		icon: ImageIcon,
 		category: "Performance",
+		href: "/tools/image-compressor",
 	},
 	{
 		title: "CSS & JS Minifier",
