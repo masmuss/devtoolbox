@@ -9,10 +9,15 @@ interface Props {
 import "@/styles/global.css";
 import Footer from "@/components/layouts/Footer.astro";
 import ThemeProvider from "@/components/layouts/ThemeProvider.astro";
+import ToolSidebar from "@/components/layouts/ToolSidebar";
 
 const { title, description = "Collection of useful developer tools" } = Astro.props;
 
 const pageTitle = title ? `${title} - DevToolbox` : "DevToolbox";
+
+const path = Astro.url.pathname;
+// Check if it's a specific tool page (starts with /tools/ and is not the tools index)
+const isToolPage = path.startsWith("/tools/") && path !== "/tools" && path !== "/tools/";
 ---
 
 <!doctype html>
@@ -30,10 +35,44 @@ const pageTitle = title ? `${title} - DevToolbox` : "DevToolbox";
 		<ThemeProvider />
 		<Header />
 
-		<main class="mx-auto min-h-screen">
-			<slot />
+		<main class="mx-auto min-h-screen w-full">
+			{
+				isToolPage ? (
+					<div class="mx-auto flex w-full max-w-screen-2xl flex-col items-start gap-4 px-4 py-6 md:flex-row md:gap-8 md:px-8 md:py-8">
+						<aside class="custom-scrollbar sticky top-24 hidden max-h-[calc(100vh-100px)] w-[240px] shrink-0 overflow-y-auto md:block">
+							<ToolSidebar client:load currentPath={path} />
+						</aside>
+
+						<div class="w-full min-w-0 flex-1">
+							<div class="mt-2 mb-6 md:hidden">
+								<ToolSidebar client:load isMobile currentPath={path} />
+							</div>
+							<slot />
+						</div>
+					</div>
+				) : (
+					<slot />
+				)
+			}
 		</main>
 
 		<Footer />
 	</body>
 </html>
+
+<style is:global>
+	/* Minimalist scrollbar for the sidebar */
+	.custom-scrollbar::-webkit-scrollbar {
+		width: 4px;
+	}
+	.custom-scrollbar::-webkit-scrollbar-track {
+		background: transparent;
+	}
+	.custom-scrollbar::-webkit-scrollbar-thumb {
+		background-color: rgba(156, 163, 175, 0.3);
+		border-radius: 20px;
+	}
+	.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+		background-color: rgba(75, 85, 99, 0.4);
+	}
+</style>
