@@ -1,0 +1,19 @@
+---
+import PageHeader from "@/components/layouts/PageHeader.astro";
+import CodeMinifierComponent from "@/components/tools/code-minifier";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+	title="Code Minifier"
+	description="Minify and compress CSS, JavaScript, and JSON to optimize web performance"
+>
+	<main class="mx-auto max-w-5xl px-6 py-12 lg:px-8">
+		<PageHeader
+			title="Code Minifier"
+			description="Compress your CSS, JavaScript or JSON code instantly to reduce file size and increase web performance."
+		/>
+
+		<CodeMinifierComponent client:load />
+	</main>
+</BaseLayout>

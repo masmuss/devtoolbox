@@ -13,6 +13,7 @@ import {
 	Link,
 	type LucideIcon,
 	Mail,
+	Minimize2,
 	Shield,
 	Smartphone,
 	Terminal,
@@ -236,10 +237,11 @@ export const allTools: Tool[] = [
 		category: "Performance",
 	},
 	{
-		title: "CSS Minifier",
-		description: "Minify CSS code to reduce file size and improve loading speed",
-		icon: Cpu,
+		title: "CSS & JS Minifier",
+		description: "Compress CSS, JavaScript, and JSON code to reduce file sizes",
+		icon: Minimize2,
 		category: "Performance",
+		href: "/tools/code-minifier",
 	},
 	{
 		title: "JavaScript Minifier",
