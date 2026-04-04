@@ -3,7 +3,6 @@ import { CategoryFilter } from "@/components/category-filter";
 import { ToolCard } from "@/components/tool-card";
 import { Button } from "@/components/ui/button.tsx";
 import { categories } from "@/lib/data/categories";
-import { siteConfig } from "@/lib/data/constants";
 import { popularTools } from "@/lib/data/tools";
 
 export function Tools() {

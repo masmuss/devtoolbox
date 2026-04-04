@@ -18,14 +18,6 @@ interface URLEncoderTabProps {
 	onSwap: () => void;
 }
 
-const exampleURLs = [
-	"https://example.com/search?q=hello world&category=tech",
-	"https://api.example.com/users?name=John Doe&email=john@example.com",
-	"Special characters: !@#$%^&*()+={}[]|\\:;\"'<>,.?/~`",
-	"Unicode: 你好世界 🌍 café naïve résumé",
-	"Spaces and symbols: This is a test & more!",
-];
-
 export function URLEncoderTab({
 	input,
 	output,

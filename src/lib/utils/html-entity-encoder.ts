@@ -89,11 +89,11 @@ export function decodeHtmlEntities(text: string): string {
 	}
 
 	// Decode numeric entities (&#123; and &#x1A;)
-	decoded = decoded.replace(/&#(\d+);/g, (match, num) => {
+	decoded = decoded.replace(/&#(\d+);/g, (_, num) => {
 		return String.fromCharCode(Number.parseInt(num, 10));
 	});
 
-	decoded = decoded.replace(/&#x([0-9a-fA-F]+);/g, (match, hex) => {
+	decoded = decoded.replace(/&#x([0-9a-fA-F]+);/g, (_, hex) => {
 		return String.fromCharCode(Number.parseInt(hex, 16));
 	});
 

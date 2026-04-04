@@ -151,7 +151,7 @@ export default function QrCodeGenerator() {
 								bgColor={bgColor}
 								fgColor={fgColor}
 								level={level}
-								includeMargin={includeMargin}
+								marginSize={includeMargin ? 4 : 0}
 							/>
 						) : (
 							<p className="text-muted-foreground text-sm">Enter some text to generate QR code</p>

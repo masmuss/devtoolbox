@@ -44,11 +44,7 @@ export function convertTimezone(
 		}
 
 		// Create date in source timezone
-		const sourceDate = new Date(date.toLocaleString("en-US", { timeZone: fromTimezone }));
 		const utcDate = new Date(date.getTime() + date.getTimezoneOffset() * 60000);
-
-		// Convert to target timezone
-		const targetDate = new Date(utcDate.toLocaleString("en-US", { timeZone: toTimezone }));
 
 		const formatter = new Intl.DateTimeFormat("en-US", {
 			timeZone: toTimezone,

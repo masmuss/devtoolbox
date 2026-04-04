@@ -11,5 +11,5 @@ export interface DateCalculatorState {
 	baseDate: string;
 	amount: string;
 	unit: string;
-	result: null | Date;
+	result: null | { formatted: string; iso: string; relative: string };
 }

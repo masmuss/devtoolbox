@@ -13,7 +13,6 @@ import {
 	Link,
 	type LucideIcon,
 	Mail,
-	Palette,
 	Shield,
 	Smartphone,
 	Terminal,
