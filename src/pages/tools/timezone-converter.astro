@@ -1,0 +1,19 @@
+---
+import PageHeader from "@/components/layouts/PageHeader.astro";
+import TimezoneConverterComponent from "@/components/tools/timezone-converter";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+	title="Timezone Converter"
+	description="Convert and compare date and time automatically across multiple global timezones"
+>
+	<main class="mx-auto max-w-5xl px-6 py-12 lg:px-8">
+		<PageHeader
+			title="Timezone Converter"
+			description="Compare times across around the world instantly. Select your local time and see its equivalent in major cities and regions."
+		/>
+
+		<TimezoneConverterComponent client:load />
+	</main>
+</BaseLayout>

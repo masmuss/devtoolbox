@@ -31,20 +31,13 @@ export const COMMON_TIMEZONES: TimezoneInfo[] = [
 	{ name: "Pacific/Auckland", abbreviation: "NZST/NZDT", offset: "+12:00/+13:00", utcOffset: 12 },
 ];
 
-export function convertTimezone(
-	dateTime: string,
-	fromTimezone: string,
-	toTimezone: string,
-): ConvertedTime | null {
+export function convertTimezone(dateTime: string, toTimezone: string): ConvertedTime | null {
 	try {
 		const date = new Date(dateTime);
 
-		if (isNaN(date.getTime())) {
+		if (Number.isNaN(date.getTime())) {
 			return null;
 		}
-
-		// Create date in source timezone
-		const utcDate = new Date(date.getTime() + date.getTimezoneOffset() * 60000);
 
 		const formatter = new Intl.DateTimeFormat("en-US", {
 			timeZone: toTimezone,
@@ -76,24 +69,21 @@ export function convertTimezone(
 			iso: new Date(date.toLocaleString("en-US", { timeZone: toTimezone })).toISOString(),
 			utcOffset,
 		};
-	} catch (error) {
+	} catch (_error) {
 		return null;
 	}
 }
 
 export function getCurrentTimeInTimezone(timezone: string): ConvertedTime | null {
 	const now = new Date();
-	return convertTimezone(now.toISOString(), "UTC", timezone);
+	return convertTimezone(now.toISOString(), timezone);
 }
 
-export function getAllTimezoneConversions(
-	dateTime: string,
-	sourceTimezone: string,
-): ConvertedTime[] {
+export function getAllTimezoneConversions(dateTime: string): ConvertedTime[] {
 	const conversions: ConvertedTime[] = [];
 
 	for (const tz of COMMON_TIMEZONES) {
-		const converted = convertTimezone(dateTime, sourceTimezone, tz.name);
+		const converted = convertTimezone(dateTime, tz.name);
 		if (converted) {
 			conversions.push(converted);
 		}
@@ -108,7 +98,7 @@ export function validateDateTime(dateTime: string): { isValid: boolean; error?: 
 	}
 
 	const date = new Date(dateTime);
-	if (isNaN(date.getTime())) {
+	if (Number.isNaN(date.getTime())) {
 		return { isValid: false, error: "Invalid date/time format" };
 	}
 

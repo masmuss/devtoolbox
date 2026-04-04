@@ -161,9 +161,10 @@ export const allTools: Tool[] = [
 	},
 	{
 		title: "Timezone Converter",
-		description: "Convert times between different timezones around the world",
+		description: "Convert time across different timezones",
 		icon: Clock,
 		category: "Time",
+		href: "/tools/timezone-converter",
 	},
 	{
 		title: "Cron Expression Generator",
