@@ -1,0 +1,19 @@
+---
+import PageHeader from "@/components/layouts/PageHeader.astro";
+import IpLookupComponent from "@/components/tools/ip-lookup";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+	title="IP Address Lookup"
+	description="Find geolocation data, ISP details, and timezone information for any IP address"
+>
+	<main class="mx-auto max-w-5xl px-6 py-12 lg:px-8">
+		<PageHeader
+			title="IP Address Lookup"
+			description="Trace any IPv4 or IPv6 address to discover its exact location, Internet Service Provider (ISP), ASN, and regional timezone metadata."
+		/>
+
+		<IpLookupComponent client:only="react" />
+	</main>
+</BaseLayout>

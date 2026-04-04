@@ -208,6 +208,7 @@ export const allTools: Tool[] = [
 		description: "Get detailed information about IP addresses including location",
 		icon: Globe,
 		category: "Utilities",
+		href: "/tools/ip-lookup",
 	},
 
 	// Database Tools
