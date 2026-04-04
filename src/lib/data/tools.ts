@@ -230,6 +230,7 @@ export const allTools: Tool[] = [
 		description: "Generate database schemas from JSON or CSV data",
 		icon: Database,
 		category: "Database",
+		href: "/tools/schema-generator",
 	},
 
 	// Performance Tools
