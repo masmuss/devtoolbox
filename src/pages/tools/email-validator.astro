@@ -1,0 +1,19 @@
+---
+import PageHeader from "@/components/layouts/PageHeader.astro";
+import EmailValidatorComponent from "@/components/tools/email-validator";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+	title="Email Validator"
+	description="Validate email address formats and identify throwaway, freemail, or role accounts"
+>
+	<main class="mx-auto max-w-5xl px-6 py-12 lg:px-8">
+		<PageHeader
+			title="Email Validator"
+			description="Ensure your email addresses are structurally valid. Instantly identify generic role-based addresses and free email providers."
+		/>
+
+		<EmailValidatorComponent client:load />
+	</main>
+</BaseLayout>

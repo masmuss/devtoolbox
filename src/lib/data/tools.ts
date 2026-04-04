@@ -3,7 +3,6 @@ import {
 	Calendar,
 	Clock,
 	Code,
-	Cpu,
 	Database,
 	FileText,
 	Globe,
@@ -202,6 +201,7 @@ export const allTools: Tool[] = [
 		description: "Validate email addresses and check for common formatting issues",
 		icon: Mail,
 		category: "Utilities",
+		href: "/tools/email-validator",
 	},
 	{
 		title: "IP Address Lookup",
@@ -244,12 +244,6 @@ export const allTools: Tool[] = [
 		icon: Minimize2,
 		category: "Performance",
 		href: "/tools/code-minifier",
-	},
-	{
-		title: "JavaScript Minifier",
-		description: "Minify JavaScript code while preserving functionality",
-		icon: Cpu,
-		category: "Performance",
 	},
 
 	// Math Tools
